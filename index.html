@@ -1,0 +1,3133 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript Notes</title>
+    <link rel="stylesheet" href="StyleSheet1.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <nav class="outline sidebar-mouseover-area">
+      <h2><a href="#top">Outline</a></h2>
+      <ul id="chapters">
+        <li>
+          <a href="#chapter1">1. Types and Key Terms</a>
+        </li>
+        <li><a href="#chapter1a" class="lilArrow">Variables</a></li>
+        <li>
+          <a href="#chapter2">2. Conditional Statements</a>
+        </li>
+        <li>
+          <a href="#chapter3">3. Functions</a>
+        </li>
+        <li>
+          <a href="#chapter4">4. Scope</a>
+        </li>
+        <li>
+          <a href="#chapter5">5. The DOM & jQuery</a>
+        </li>
+        <li><a href="#chapter5a" class="lilArrow">JS Runtime Environments</a></li>
+        <li>
+          <a href="#chapter6">6. Arrays</a>
+        </li>
+        <li>
+          <a href="#chapter7">7. Loops</a>
+        </li>
+        <li>
+          <a href="#chapter8">8. Objects</a>
+        </li>
+        <li><a href="#chapter8a" class="lilArrow">This</a></li>
+        <li><a href="#chapter8b" class="lilArrow">Other Critical Details</a></li>
+        <li><a href="#chapter8c" class="lilArrow">More on Creating Objects</a></li>
+        <li><a href="#chapter8d" class="lilArrow">Closure</a></li>
+        <li><a href="#chapter8e" class="lilArrow">Access Functions</a></li>
+        <li>
+          <a href="#chapter9">9. Callbacks</a>
+        </li>
+        <li><a href="#chapter9a" class="lilArrow">Iterators</a></li>
+        <li><a href="#chapter9b" class="lilArrow">Errors and Debugging</a></li>
+        <li>
+          <a href="#chapter10">10. The Script Element</a>
+        </li>
+        <li><a href="#chapter10a" class="lilArrow">The DOM</a></li>
+        <li>
+          <a href="#chapter11">11. EventTargets</a>
+        </li>
+        <li><a href="#chapter11a" class="lilArrow">Input Forms and Validation</a></li>
+        <li>
+          <a href="#chapter12">12. Classes</a>
+        </li>
+        <li><a href="#chapter12a" class="lilArrow">Inheritance</a></li>
+        <li>
+          <a href="#chapter13">13. Asynchronous Javascript</a>
+        </li>
+        <li>
+          <a href="#chapter13a" class="lilArrow">.then() & .catch()</a>
+        </li>
+        <li>
+          <a href="#chapter13b" class="lilArrow">Async-Await</a>
+        </li>
+        <li>
+          <a href="#chapter13c" class="lilArrow">APIs and HTTP Requests</a>
+        </li>
+        <li>
+          <a href="#chapter13d" class="lilArrow">RESTful APIs and JSON</a>
+        </li>
+        <li>
+          <a href="#chapter13e" class="lilArrow">The Fetch API</a>
+        </li>
+        <li>
+          <a href="#chapter14">14. JSX and React</a>
+        </li>
+        <li>
+          <a href="#chapter14a" class="lilArrow">React, Part 1.</a>
+        </li>
+        <li>
+          <a href="#chapter14b" class="lilArrow">React, Part 2.</a>
+        </li>
+        <li>
+          <a href="#chapter14c" class="lilArrow">The State Hook</a>
+        </li>
+        <li>
+          <a href="#chapter14d" class="lilArrow">The Effect Hook</a>
+        </li>
+        <li>
+          <a href="#chapter14e" class="lilArrow">Common Pitfalls with Hooks</a>
+        </li>
+        <li>
+          <a href="#chapter14f" class="lilArrow">React Programming Patterns</a>
+        </li>
+
+      </ul>
+
+
+
+
+
+    </nav>
+    <div class="sidebar-divider sidebar-mouseover-area"></div>
+    <div class="sidebar-tab">
+      <img class="sidebar-mouseover-area" src="images/paths/wedge2.svg" />
+    </div>
+  </div>
+  <header id="top">
+    <div class="header-layer">
+      <img class="javascript-logo" src="images/javascript-logo-transparent.png" />
+      <div class="div-h1">
+        <h1>J<span class="span-h1">avascript</span> N<span class="span-h1">otes</span></h1>
+      </div>
+      <div class="div-menuButton">
+        <input type="checkbox" id="menuToggle" />
+        <label for="menuToggle" class="yellow" id="menuButton">☰ Chapter Outline</label>
+      </div>
+    </div>
+  </header>
+  <div class="main">
+    <div class="content">
+      <section>
+        <h2 class="underline">Resources</h2>
+        <ul>
+          <li><a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+          <li><a href="https://www.w3schools.com/js/default.asp" target="_blank" rel="noopener noreferrer">W3</a></li>
+          <li><a href="https://eloquentjavascript.net/" target="_blank" rel="noopener noreferrer">Eloquent Javascript</a></li>
+          <li><a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener noreferrer">WebAIM: Color Contrast Checker</a></li>
+          <li><a href="https://colorhunt.co/" target="_blank" rel="noopener noreferrer">Color Hunt - Color Palettes for Designers</a></li>
+          <li><a href="https://colorsupplyyy.com/app/" target="_blank" rel="noopener noreferrer">Color Supplyyy - Color Palette</a></li>
+          <li><a href="https://www.gnu.org/software/bash/manual/bash.html#Basic-Shell-Features" target="_blank" rel="noopener norefferer">Bash Shell Reference Manual</a></li>
+          <li><a href="https://learnxinyminutes.com/docs/bash/" target="_blank" rel="noopener norefferer">Quick Guide to Bash Shell</a></li>
+          <li><a href="https://nodejs.org/en/learn/getting-started/introduction-to-nodejs" target="_blank" rel="noopener noreferrer">Node.js Docs</a></li>
+          <li><a href="https://www.messletters.com/en/big-text/" target="_blank" rel="noopener noreferrer">Make big ASCII Words</a></li>
+          <li><a href="https://regexr.com/" target="_blank">Regex Tester</a></li>
+          <li><a href="https://react.dev/" target="_blank">React Docs</a></li>
+          <li><a href="https://create-react-app.dev/" target="_blank">Create React App Command</a></li>
+        </ul>
+
+
+        <h2 class="underline">Cool APIs</h2>
+        <ul>
+          <li><a href="https://www.datamuse.com/api/" target="_blank" rel="noopener noreferrer">Datamuse</a> - word/lexical type tools</li>
+        </ul>
+      </section>
+
+      <section>
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ██
+    ██░░░░██░██                ██████   ░██                    ███
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░░██
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█   ░██
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    ░██
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      ░██
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███      ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░      ░░░░      -->
+
+
+        <h2 id="chapter1">Chapter 1</h2>
+        <h3 class="italic">Types and Key Terms</h3>
+        <ul id="chapter1UL" role="presentation">
+          <li><em>Number</em> data type doesn't distinguish between ints or floats</li>
+          <li><em>BigInt</em> is a really really really big number you'll probably never need to know</li>
+          <li><em>Boolean</em> is either true or false</li>
+          <li><em>String</em> is either in single quotes or double quotes, single preferred</li>
+          <li><em>Null</em> is an absence of a value</li>
+          <li><em>Undefined</em> similar to null (but not entirely sure yet the difference)</li>
+          <li><em>Symbol</em> is a newer addition to the language for more complex coding</li>
+          <li>Or <em>custom objects</em> of your own creation are data types</li>
+          <li>An <em>expression</em> is any piece of code that resolves to a value. This may include: literals, custom objects, variables, function call expressions, adding two numbers, etc.</li>
+          <li>An expression may consist of multiple sub-expressions, such as <mark>myFunction(secondFunc(5+5))</mark>, which has 3 expressions total</li>
+          <li>In coding, not everything becomes a value in the code though. <em>Statements</em> perform actions and manage control flow, but they do not resolve to a value.</li>
+          <li>Use <mark>console.log()</mark> to print to the console</li>
+          <li>Retrieve data property information with the dot <mark>.</mark> operator, such as <mark>console.log('string'.length)</mark></li>
+          <li>Do arithmetic with <mark>+</mark> <mark>-</mark> <mark>*</mark> <mark>/</mark> <mark>%</mark> operators</li>
+          <li>You can concatenate strings with the addition <mark>+</mark> operator. For example: <code>console.log('Water' + 'melon')</code></li>
+          <li>When you introduce a new piece of data, the browser saves it as a new instance of that type. Which gives you access to a bunch of object member functions</li>
+          <li><em>Methods</em> are member functions of objects
+          <li>
+            Strings have their own built-in methods, such as
+            <code>
+              console.log('mystring'.length);
+              <br />console.log('mystring'.toUpperCase());<br />
+              console.log('mystring'.includes('string')); <span>/* outputs: True */</span>
+            </code>
+          </li>
+          <li><mark>console</mark> is a built-in object with its own method functions</li>
+          <li><mark>Math</mark> is a built-in object with its own method functions</li>
+          <li><mark>Math.random()</mark> results in a float between 0 and 1</li>
+          <li>
+            The following results in a rounded down whole number (floor division) between 0 and 40:
+            <code>console.log(Math.floor(Math.random() * 40));</code>
+          </li>
+          <li><mark>Math.ceil(48.9)</mark> will round 48.9 up to the closest int, 49</li>
+          <li><mark>Math.isInteger(14)</mark> will check if 14 is an integer, resulting in true</li>
+          <li><mark>num.toFixed(1)</mark> will set the number of decimal places in a float to 1</li>
+          <li>Remember to always end statements with semicolons.</li>
+          <li>Javascript does apply ASI (automatic semicolon insertion), but manually applying them will prevent subtle bugs</li>
+
+        </ul>
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter1a">Javascript Syntax: Variables</h4>
+        <ul id="chapter1aUL">
+          <li>Variables are containers for a value that's stored in the computer's memory. They are not values themselves.</li>
+          <li>
+            <em>Camel case</em> is the standard naming convention<br />
+            <code>var itemCount = 0; <span>/* correct use of camel case */</span></code>
+          </li>
+          <li><mark>=</mark> is the assignment operator</li>
+          <li>Variables can't start with numbers, can't be a keyword, and are case sensitive</li>
+          <li><mark>var</mark>, <mark>let</mark>, and <mark>const</mark> all declare variables</li>
+          <li><mark>let</mark> was introduced in ES6 and is preferred over var because let is block scoped and var is function scoped, and could be used before it was declared</li>
+          <li>let also doesn't allow redeclaration, only reassignment, but var did which is really messy and confusing</li>
+          <li><mark>const</mark> will hold a constant value and can't be reassigned</li>
+          <li>Mathematical assignment operators: <mark>+=</mark> <mark>-=</mark> <mark>/=</mark> and <mark>*=</mark></li>
+          <li>Increment/Decrement operators: <mark>++</mark> and <mark>--</mark></li>
+          <li>
+            In Javascript, the <mark>||</mark> and <mark>&&</mark> operators employ short-circuit evaluation and return actual values! This is very different and unlike C++, which simply
+            evaluates to true or false values
+          </li>
+          <li>The <mark>||</mark> will return the first truthy value, or the last value if both are falsy</li>
+          <li>The <mark>&&</mark> will return the second truthy value, or the first value if it is falsy</li>
+          <li>
+            You can concatenate strings with variables that hold strings ⟶
+            <code>
+              let pizza = 'pepperoni';
+              <br />console.log('My favorite pizza is' + pizza);
+              <br /><span>/* outputs: My favorite pizza is pepperoni */</span>
+            </code>
+          </li>
+          <li>
+            <em>String literal templates</em> - Used to insert a variable directly into a string. This is done with <mark>${}</mark> and backticks:
+            <code>console.log(`Employee name ${name}`);</code>
+          </li>
+          <li>
+            Use <mark>typeof</mark> to check a variable type e.g. ⟶
+            <code>
+              let fruit = 'banana';
+              <br />console.log(typeof fruit);
+              <br /><span>/* outputs: string */</span>
+            </code>
+          </li>
+          <li><em>String Interpolation</em> - Using template literals to embed variables into string</li>
+          <li>
+            Because <mark>${}</mark> interpolates values as strings, this will output string:
+            <code>
+              let num = 3;
+              <br />console.log(typeof `$(num)`);
+            </code>
+          </li>
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ████
+    ██░░░░██░██                ██████   ░██                    █░░░ █
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░    ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█     ███
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░     █░░
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      █
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███     ░██████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░      ░░░░░░        -->
+
+
+        <h2 id="chapter2">Chapter 2</h2>
+        <h3 class="italic">Javascript Syntax: Conditional Statements</h3>
+        <ul id="chapter2UL">
+          <li>
+            If statements are made like so:
+            <code>
+              let age = 100;
+              <br />if (age === 100){ <span>/* if is triggered via triple assignment operator */</span>
+              <br />console.log('Wow you\'re a century old!'); <span>/* escape character needed */</span>
+              <br />}
+            </code>
+          </li>
+          <li>
+            Else statement example:
+            <code>
+              let selected = true;
+              <br />if(selected) {
+              <br /><pre>console.log('Great choice!')</pre>} else {
+              <br /><pre>console.log('Please select a character.');</pre>}
+              <span>/* outputs: "Great choice!" */</span>
+            </code>
+          </li>
+          <li>These are the comparison operators: <mark>></mark> <mark><</mark> <mark><=</mark> <mark>>=</mark> <mark>===</mark> <mark>!==</mark></li>
+          <li>The <mark>!</mark> is called the <em>bang operator</em> and it changes the truthiness or falsiness of a value</li>
+          <li><mark>==</mark> and <mark>===</mark> are different. <mark>==</mark> performs type conversion to compare values, <mark>===</mark> does not.</li>
+          <li>
+            <mark>0</mark> <mark>null</mark> <mark>''</mark> <mark>""</mark> <mark>undefined</mark> or <mark>NaN</mark> (Not a Number) will all evaluate to false if checked as a boolean condition:
+            <code>
+              let meatballs = 0
+              <br />if (meatballs){
+              <br />console.log('Mama mia!')
+              <br />} else {
+              <br />console.log('Oh nooo!')
+              <br />}<span>/* outputs: Oh nooo! */</span>
+            </code>
+          </li>
+          <li>
+            You assign boolean conditions to variables, such as:
+            <code>
+              let chips = 14;
+              <br />let allIn = chips || 0;
+              <br />if (allIn){
+              <br /><pre>console.log(`Wow you just bet ${allIn} chips!`)</pre> } else {
+              <br /><pre>console.log(`You\'re broke! You have ${allIn} chips left!`)</pre>} <span>/* outputs: Wow you just bet 14 chips! */</span>
+            </code>
+          </li>
+          <li>Ternary operators <mark>?</mark> <mark>:</mark> are shorthand if-else statements in Javascript</li>
+          <li>You can chain elses with <mark>else if</mark></li>
+          <li>
+            Here's how to do a switch statement:
+            <code>
+              let fruit = 'grape';
+              <br />switch(fruit) {
+              <br /><pre>case 'lemon':</pre>
+              <pre>&nbsp;&nbsp;&nbsp;console.log('yellow');</pre>
+              <pre>&nbsp;&nbsp;&nbsp;break;</pre>
+              <pre>case 'apple':</pre>
+              <pre>&nbsp;&nbsp;&nbsp;console.log('red');</pre>
+              <pre>&nbsp;&nbsp;&nbsp;break;</pre>
+              <pre>case 'grape':</pre>
+              <pre>&nbsp;&nbsp;&nbsp;console.log('purple');</pre>
+              <pre>&nbsp;&nbsp;&nbsp;break;</pre>
+              <pre>default:</pre>
+              <pre>&nbsp;&nbsp;&nbsp;console.log('No fruit picked');</pre>
+              <pre>&nbsp;&nbsp;&nbsp;break;</pre>} <span>/* outputs: purple */</span>
+            </code>
+          </li>
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ████
+    ██░░░░██░██                ██████   ░██                    █░░░ █
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░    ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█     ███
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░     ░░░ █
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      █   ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███     ░ ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░       ░░░░         -->
+
+
+        <h2 id="chapter3">Chapter 3</h2>
+        <h3 class="italic">Javascript Syntax: Functions</h3>
+        <ul id="chapter3UL">
+          <li>
+            Functions are declared using the "function" keyword, followed by an identifier (a unique name), and a bracket:
+            <code>
+              function printNonsense(){
+              <pre>console.log('Nonsense');</pre>}
+            </code>
+          </li>
+          <li>Functions are <em>hoisted</em>, meaning they can can be called before being declared, although this is bad practice</li>
+          <li>You can add any parameters you want</li>
+          <li>
+            Call the same way you would any function, just add arguments:
+            <code>
+              function printBigger(x, y){
+              <pre>console.log(Math.max(x,y));</pre>}
+              <br />printBigger(2, 4); <span>/* outputs: 4 */</span>
+            </code>
+          </li>
+          <li>You can also assign default parameters with <mark>=</mark></li>
+          <li>
+            Because functions don't need return type declarations, just simply return whatever you want at any point:
+            <code>
+              function cutify(name = Pup){
+              <pre>return name + 'sipoo'; }</pre>
+              <br />let dog = 'Fluff'
+              <br />console.log("Your dog's new name is " + cutify(dog)); <span>/* outputs: Fluffsipoo */</span>
+            </code>
+          <li>
+            A <em>helper function</em> is essentially chaining functions:
+            <code>
+              function randomSix(){
+              <pre>return Math.floor((Math.random()*6))+1; }</pre> <span>/* multiplies a decimal (or zero) by 6, giving 0-5, then rounds it down and adds 1 */</span><br />
+              <br />function rollDice(){
+              <pre>return randomSix() + randomSix(); }</pre>
+              <span>/* This will give you a proper distribution for randomized dice, instead of randomly picking a number from 1-12 */</span>
+              <br /><br />console.log(rollDice());
+            </code>
+          <li>Javascript also supports <em>nested functions</em>, which are functions declared within a different function</li>
+          <li>
+            A function expression is an anonymous function. They can be assigned to a variable, where const is the prescribed variable keyword:
+            <code>
+              const randomNum = function(start, end){
+              <pre>return (Math.floor(Math.random()*(end+1-start)))+start;  <br />};</pre><br />
+              console.log(randomNum(4, 8)); <span>/* outputs a number from 4 to 8 (including 8) */</span>
+            </code>
+            <aside class="warning">
+              Important: Function declarations are hoisted, so they can be used anywhere above or below in the script.
+              Function expressions are not hoisted, however. They cannot be used before they are defined.
+            </aside>
+          </li>
+          <li>
+            You can replace the function keyword with the <mark>=></mark> shorthand:
+            <code>
+              const passwordGenerator = (numCharacters) => {
+              <pre>let word = "";</pre>
+              <pre>for (let i = 0; i < numCharacters; i++) { </pre>
+              <pre class='in-8'>charCode = Math.floor(Math.random() * (127-32)) + 32; </pre>
+              <pre class='in-8'>word += String.fromCharCode(charCode);</pre>
+              <pre>}</pre>
+              <pre>return word; };</pre>
+              <br />console.log(passwordGenerator(10));
+              <br /><br /><span>/* Grabs a random number, and uses the built in .fromCharCode() to translate that number into ASCII, then appends it to a string within a for loop */</span>
+            </code>
+          <li>
+            Functions and function expressions can be refactored into shorthand versions based on how many parameters and lines of code they have. Notice the missing braces, missing return, missing parentheses:
+            <code>
+              <span>/* Zero parameters, one line of code */</span>
+              <br />const funcExp = () => 1 > 0;
+              <br /><span>/* One Parameter, one line of code */</span>
+              <br />const funcExp = x => x > 0;
+              <br /><span>/* Multiple Parameters, one line of code */</span>
+              <br />const funcExp = (x, y) => x > y;
+              <br /><span>/* Multiple Parameters, multiple lines of code */</span>
+              <br />const funcExp = (paramOne, paramTwo) => {
+              <pre>let compliment = "You are a " + paramOne " " + paramTwo;</pre>
+              <pre>return compliment; };</pre>
+            </code>
+          </li>
+          <li>When a function has only 1 line, you omit return and braces. This is called <em>concise body syntax</em>. Whatever is to the right of the arrow is the returned value if curly braces are omitted.</li>
+          <li>
+            If you have a string variable, you're allowed to reassign it to itself with method functions such as:
+            <code>
+              let userInput = 'bugs';
+              <br />userInput = userInput.toUpperCase()
+            </code>
+          </li>
+          <li>If using the traditional function syntax, be careful not to use the <mark>let</mark> keyword. This is only for assigning variables to function expressions</li>
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                       ██
+    ██░░░░██░██                ██████   ░██                      █░█
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████    █ ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█   ██████
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░   ░░░░░█
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██         ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███         ░█
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░          ░         -->
+
+
+        <h2 id="chapter4">Chapter 4</h2>
+        <h3 class="italic">Javascript Syntax: Scope</h3>
+        <ul id="chapter4UL">
+          <li>Blocks <mark>{}</mark> define where variables have scope</li>
+          <li>functions can access variables in the global namespace</li>
+          <li>Javascript does not have a formal namespace feature</li>
+          <li>You can declare a new variable with the same name as a global variable, this is called variable shadowing, but this is bad coding practice. You could use the g_ prefix to avoid this problem just as in C++</li>
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                    ██████
+    ██░░░░██░██                ██████   ░██                   ░█░░░░
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░█████
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█  ░░░░░ █
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░        ░█
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      █   ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███     ░ ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░       ░░░░         -->
+
+
+        <h2 id="chapter5">Chapter 5</h2>
+        <h3 class="italic">Going Off-Platform with Javascript: The DOM and jQuery</h3>
+        <ul id="chapter5UL">
+          <li>The DOM (document object model) is a javascript object which holds all of the information for a web page</li>
+          <li>The DOM holds info via <em>properties</em> (member variables or data members of classes) and is an API for interacting with that info via <em>methods</em> (member functions of classes)</li>
+          <li>
+            The DOM is a type of Web Browser API. There are many Web API's that you can interact with, such as a Battery API which grabs information about a system's battery health, or the Audio Output API for
+            asking users where audio is output, or the Geolocation API which grabs info about a users location, or even the window management API which allows you to open and close windows of the browser
+          </li>
+          <li>To open up a blank webpage with no script, type <mark>about:blank</mark> into the url bar</li>
+          <li>clear() will clear the console</li>
+          <li>ctrl+shift+j opens console in Chrome, ctrl+shift+k opens console in Firefox</li>
+          <li>We can run Javascript independently within the browser console</li>
+          <li>We can also interact with the DOM directly within the browser console</li>
+          <li>To select an item from the DOM, use <mark>document.</mark> to select the object and access its properties and methods</li>
+          <li>Sometimes selecting items from the DOM can be tedious, so its easier to use jQuery shorthand syntax, such as <mark>$()</mark> which is shorthand for document.querySelector()</li>
+          <li>jQuery is a Javascript library for interacting with the DOM. It's primary function <mark>jQUery()</mark> has an alias, <mark>$()</mark></li>
+          <li>Inside the <mark>$()</mark> parentheses, insert any CSS selector and this will allow you to change the corresponding HTML attributes, which includes the CSS styles</li>
+          <li>
+            To use jQuery inside a browser, you first need to load the library to make the <mark>$()</mark> accessible:
+            <code>
+              var script = document.createElement('script');<br />
+              script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+              document.head.appendChild(script);
+            </code>
+          </li>
+          <li>
+            Now you can change styles, but you have to do so with the .css() method and a particular function call format:
+            <code>
+              $('header').css('background-color', 'black');
+            </code>
+          </li>
+        </ul>
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter5a" class="italic">Javascript Runtime Environments</h4>
+        <ul id="chapter5aUL">
+          <li>A runtime environment is where scripts are run. It determines what global objects your program has access to and how it runs</li>
+          <li>
+            There are two types of runtime environments: <br />
+            <div class="num-list">
+              1. The Browser's runtime environment
+              2. Node runtime environment
+            </div>
+          </li>
+          <li>The browser allows you to use all those Web API's</li>
+          <li>
+            Node.js allows you to run Javascript code outside of a browser in its own runtime environment. Using a terminal, such as powershell, command prompt, or git bash, you can either run js files, or enter the REPL
+            (read-evaluate-print loop) to interactively run js commands one at a time.
+            <div class="screenshots"><img src="images/node-demo.png" /></div>
+          </li>
+          <li>Above you can see, the first terminal command <mark>pwd</mark> (print working directory) is done using bash script, but the second command runs the file using Node.js</li>
+          <li>
+            Node.js has many built-in objects for interacting with the file directory, the users system. In this case, the above script prints the script using <mark>process.env.PWD</mark> instead of pwd. Its syntax for navigating
+            the directory is different than Bash.
+          </li>
+          <li>
+            If you type node, you will enter the read-evaluate-print loop, such as you would see in a browser. The .help screen is pretty useful:
+            <div class="screenshots"><img src="images/node-demo-2.png" /></div>
+          </li>
+          <li>Here, I used the read-evaluate-print loop to create several commands, and then save them into a file called new-file</li>
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ████
+    ██░░░░██░██                ██████   ░██                    █░░░ █
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░█   ░
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█  ░█████
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░   ░█░░░ █
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██     ░█   ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███     ░ ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░       ░░░░         -->
+
+
+        <h2 id="chapter6">Chapter 6</h2>
+        <h3 class="italic">Javascript Syntax: Arrays</h3>
+        <ul id="chapter6UL">
+          <li>Arrays are dynamic. They can store any data type or any mix of data types</li>
+          <li>Array size does not have to be declared, and new items can be added at any time</li>
+          <li>Arrays are allocated on the heap.</li>
+          <li>
+            Here's how to create an array and access elements:
+            <code>
+              let myArr = ["element1", 2, "element3"];
+              <br />console.log(myArr); <span>/* outputs contents of array: ['element1', 2, 'element3'] */</span>
+              <br />console.log(myArr[0]); <span>/* outputs: "element1" */</span>
+            </code>
+          </li>
+          <li>Note that array indexes start at 0</li>
+          <li>
+            You can access certain characters from strings the same way as array indexes:
+            <code>
+              let myStr = "watermelon"
+              <br />console.log(myStr[5]) <span> /* outputs: m */</span>
+            </code>
+          </li>
+          <li>Note though that strings are not arrays. They are immutable (can't be directly changed) primitive data types, whereas arrays are objects mutable with their own separate set of built-in methods</li>
+          <li>
+            You can change strings indirectly however, with concatenation and slice:
+            <code>
+              let myStr = "Cat"
+              <br />myStr = "H" + myStr.slice(1);
+              <br />console.log(myStr); <span>/* outputs: Hat */</span>
+            </code>
+          </li>
+          <li>To access the last element in an array, you can use <mark>array[array.length-1]</mark></li>
+          <li>When an array is declared const, you can't reassign it. But the actual elements inside are still mutable.</li>
+          <li><mark>array.push()</mark> will add an element to the end of an array</li>
+          <li><mark>array.pop()</mark> will remove and return the last element</li>
+          <li><mark>array.shift()</mark> will remove and return the first element</li>
+          <li><mark>array.unshift()</mark> will add an element to the beginning of the array</li>
+          <li><mark>array.slice(3, 5)</mark> will return a two element slice at index 3 and index 4. The original array does not change.</li>
+          <li><mark>array.indexOf('pizza')</mark> will return the first index holding 'pizza'</li>
+          <li><mark>array.splice(2, 2, 'ocean')</mark> will delete elements 2 and 3 and replace them with with 'ocean'</li>
+          <li><mark>array.join(' ')</mark> will concatenate all elements of an array together into a string, separated by whatever you place in the parentheses (a space in this case)</li>
+          <li>The best method for inserting an object into an array is to use array.splice(index, 0, object). In this case, zero means nothing will be deleted.</li>
+          <li>
+            Arrays are passed by reference by default to functions, and because they have automatic garbage collection, you don't need to worry about memory allocation or dangling references:
+            <code>
+              let clients = ['Tom', 'Harry', 'Shanon']
+              <br />function addClient(client){
+              <pre>clients.push(client); }</pre><br />
+              addClient('Debra');
+              <br />console.log(clients) <span>/* outputs: ['Tom', 'Harry', 'Shanon', 'Debra'] */</span>
+            </code>
+          </li>
+          <li>
+            Primitive data types are passed by value though. But arrays are passed by reference. Here's the important distinction:
+            <code>
+              let val1 = 'fire';
+              <br />let val2 = val1;
+              <br />val1 = 'water';
+              <br />console.log(val1); <span>/* outputs: water */</span>
+              <br />console.log(val2); <span>/* outputs: fire */</span><br />
+              <br />let elementsArr = ['fire'];
+              <br />let ref1 = elementsArr;
+              <br />let ref2 = ref1;
+              <br />ref1[0] = 'water';
+              <br />console.log(elementsArr) <span>/* outputs: ['water'] */</span>
+              <br />console.log(ref1); <span>/* outputs: ['water'] */</span>
+              <br />console.log(ref2); <span>/* outputs: ['water'] */</span>
+            </code>
+          </li>
+          <li>
+            You can also nest arrays to make multi-dimensional arrays:
+            <code>
+              let numberClusters = [[1, 2], [3, 4], [5, 6]];
+              <br />const target = numberClusters[2][1];
+              <br />console.log(target); <span>/* outputs: 6 */</span>
+              <br /><br />let wtf = ['I', [1, ['a', 'b']], 'II']; <span>/* 3 dimensional array */</span>
+              <br />console.log(wtf[1][1][1]); <span>/* outputs: b */</span>
+            </code>
+          <li>
+            Spread syntax is a way of expanding arrays im places where multiple arguments can be accepted. This can also be done with anything iterable (i.e. objects and strings):
+            <code>
+              const letters = ['H', 'e', 'l', 'l', 'o', ' ', 'E', 'a', 'r', 'l'];
+
+              function concat(arg){
+              arg.reduce((acc, curr) => acc + curr);
+              }
+
+              concat(letters);
+            </code>
+          </li>
+          <li>
+            When you leave off array <mark>[]</mark> syntax or object <mark>{}</mark> syntax, Javascript interprets it as a sequence of arguments to a function, rather than an array or object.
+            If a function only takes a single argument, it will throw an error.
+          </li>
+
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                    ██████
+    ██░░░░██░██                ██████   ░██                   ░░░░░░█
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████       ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█       █
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░       █
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██        █
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███       █
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░       ░          -->
+
+
+        <h2 id="chapter7">Chapter 7</h2>
+        <h3 class="italic">Javascript Syntax: Loops</h3>
+        <ul id="chapter7UL">
+          <li>
+            Nothing really unique here. Here's how to do a <mark>for</mark> loop:
+            <code>
+              for (let i = 0; i < 10; i++){
+              <pre>console.log(i);</pre>}
+            </code>
+          </li>
+          <li>
+            Here's a <mark>while</mark> loop:
+            <code>
+              let i = 0
+              <br />while (true) {
+              <pre>if (!(i < 5)){</pre>
+              <pre class='in-8'>break; }</pre>
+              <pre>i++;</pre>
+              <pre>console.log(i);</pre>}
+            </code>
+          </li>
+          <li>
+            Here's a <mark>do... while</mark> loop:
+            <code>
+              let watsup = 'hello';
+              <br />do {
+              <pre>console.log(watsup);</pre>
+              <pre>watsup = 'goodbye';</pre>
+              } while (watsup === 'hello');
+              <br />console.log(watsup);
+            </code>
+          </li>
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ████
+    ██░░░░██░██                ██████   ░██                    █░░░ █
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░█   ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█  ░ ████
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    █░░░ █
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██     ░█   ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███     ░ ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░       ░░░░         -->
+
+
+        <h2 id="chapter8">Chapter 8</h2>
+        <h3 class="italic">Javascript Syntax: Objects</h3>
+        <ul id="chapter8UL">
+          <li>
+            Javascript allows you to create objects without classes. They're set up in key-value pairs:
+            <code>
+              let myObject = {
+              <pre>'property1': 'wet',</pre>
+              <pre>property2: 500,</pre>
+              <pre>property3: ''</pre>};
+              <br />console.log(myObject.property1);<span>/* outputs: wet */</span>
+              <br />console.log(myObject['property1']); <span>/* also prints wet */</span>
+              <br />console.log(myObject.'property1'); <span>/* invalid, no quotes are used with dot operator */</span>
+            </code>
+          </li>
+          <li>
+            You can also change or add or get rid of properties:
+            <code>
+              let order1 = {
+              <pre>icecream: 'vanilla',</pre>
+              <pre>topping: 'fudge',</pre>
+              <pre>extras: 'sprinkles',</pre>
+              <pre>'banana?': true</pre> };
+              <br />order1.cone = 'waffle' <span>/* adds cone as a property */</span>
+              <br />order1.topping = 'caramel' <span>/* changes topping to caramel */</span>
+              <br />order1['banana?'] = false <span>/* always use [ ] brackets for invalid identifiers (i.e. the '?') */</span>
+              <br />order1['extras'] = 'oreos' <span>/* bracket notation is also acceptable here, but not required */</span>
+              <br />delete order1.extras; <span>/* order1 no longer has oreos via the delete keyword */</span>
+              <br />console.log(order1);
+              <br /><span>/* outputs: icecream: 'vanilla', topping: 'caramel', 'banana?': false, cone: 'waffel' */</span>
+            </code>
+          </li>
+          <li>
+            You can also declare methods to objects (still delineated by commas). There are two accepted syntaxes for this:
+            <code>
+              let calculator = {
+              <pre>add: function (a, b) { return a+b; }, <span>/* syntax 1 */</span></pre>
+              <pre>subtract: function (a, b) { return a-b; }, <span>/* syntax 1 */</span></pre>
+              <pre>multiply (a, b) {return a*b; }, <span>/* syntax 2 (newer shorthand) */</span></pre>
+              <pre>divide (a, b) {return a/b; } <span>/* syntax 2 (newer shorthand) */</span></pre> };
+              <br />let result = calculator.multiply(6, 8);
+              <br />console.log(result); <span>/* outputs: 48 */</span>
+            </code>
+          </li>
+          <li>
+            You should default to the shorthand method declaration, where multiply and divide as above are implicitly key names. In the following example, <mark>Object.keys()</mark> will return both
+            functions as valid keys, but the first is preferred:
+            <code>
+              const fancyName = {<br />
+              <pre>giveFancyName(name){</pre>
+              <pre class="in-8">const newName = name + 'genburgermenson';</pre>
+              <pre class="in-8">console.log(newName);</pre>
+              <pre>},</pre><br />
+              <pre>giveFancyNickName: function(name){ <span>/* works, but regular method declaration is simpler */</span></pre>
+              <pre class="in-8">const nickName = name.match('([^aeiouy]*[aeiuoy]*[^aeiouy])'); <span>/* returns a Regex match array */</span></pre>
+              <pre class="in-8">console.log(nickName[0]);</pre>
+              <pre>}</pre>
+              }<br /><br />
+
+              console.log(Object.keys(fancyName))
+            </code>
+          </li>
+          <li>
+            You should always use brackets for keys with invalid identifiers (special characters), but also for keys that are dynamically created:
+            <aside class="warning">
+              Important: When accessing objects with variables as dynamic key names, always use bracket notation. Brackets can interpret variables as their intended key name.
+              The dot operator will interpret a variable literally, however, adding a property with the name of the variable instead:<br /><br />
+              <code>
+                let employeeList = {<br />
+                <pre class="in-8">list: {},</pre>
+                <pre class="in-8">addEmployee: function(name, salary){</pre>
+                <pre class="in-12">this.list.name = salary;  <span>/* Incorrect, name will get overwritten every time </span></pre>
+                <pre class="in-12"><span>addEmployee is called, use this.list[name] instead */</span></pre>
+
+                <pre class="in-8">},</pre>
+                <pre class="in-8">print: function(){</pre>
+                <pre class="in-12">console.log(this.list);</pre>
+                <pre class="in-8">}</pre>
+                }<br /><br />
+
+                employeeList.addEmployee('John', 132000);<br />
+                employeeList.addEmployee('Cara', 89500);<br />
+                employeeList.print(); <span>/* outputs: Object { name: 89500 } */</span>
+              </code>
+            </aside>
+          </li>
+          <li>
+            Be very careful to note the difference between functions when they're declared as standalone functions versus methods of an object:
+            <div class="screenshots">
+              <img class="img-shrink" src="images/traditional-function-declaration.png" />
+              <img class="img-shrink" src="images/es6-shorthand.png" />
+            </div>
+          </li>
+          <li>That said, avoid shorthand syntax for methods. Shorthand has no <mark>this</mark> binding, making it useless for self-reference.</li>
+          <li>Object properties can also hold arrays</li>
+          <li>
+            You can also nest objects within other objects:
+            <code>
+              let applianceList = {
+              <pre>kitchen: { appliances: ['oven', 'dishwasher', 'toaster'] }, <span>/* array within property appliances */</span></pre>
+              <pre>'living room': { appliances: ['TV', 'stereo player'] },</pre>
+              <pre>bedroom: { appliances: ['alarm clock', 'computer'] }</pre>};
+              <br />console.log(applianceList['living room'].appliances[0]); <span>/* outputs: 'TV' */</span>
+            </code>
+          </li>
+          <li>
+            Objects can be anonymous inside of arrays because they have an index value:
+            <code>
+              let employees = [{name: 'John', salary: 90000},{name: 'Sally', salary: 130000}];
+              <br /><br />if (employees[0].salary > employees[1].salary)
+              <pre>console.log(employees[0].name);</pre> else
+              <pre>console.log(employees[1].name); <span>/* outputs: 'Sally' */</span></pre>
+            </code>
+          </li>
+          <li>Using a <mark>const</mark> keyword for an object will not allow you to reassign an object using brackets, but you will still be able to edit its properties and methods.</li>
+          <li>
+            Objects are passed by reference to functions. You may edit their properties, but reassigning only reassigns the parameter reference to a new memory space, unbinding it from its original reference location:
+            <code>
+              let vehicle = { name: 'Toyota'};
+              <br /><br />let changeName = obj => { obj.name = 'Subaru'; };
+              <br />let reassign = obj => { obj = { species: 'Platypus'}; }
+              <br /><span>/* reassignment within local function scope unbinds obj from the vehicle object memory location</span>
+              <br /><span>  but vehicle will still be at its original memory */</span><br />
+              <br />changeName(vehicle);
+              <br />console.log(vehicle); <span>/* outputs: name: 'Subaru' */</span>
+              <br />reassign(vehicle);
+              <br />console.log(vehicle); <span>/* outputs: name: 'Subaru' */</span>
+            </code>
+          </li>
+
+          <li>
+            The <mark>for... in</mark> loop allows us to iterate through object properties. The iterator typeof is string:
+            <code>
+              let houseListing = {
+              <pre>price: 560000,</pre>
+              <pre>'sq. feet': 1600,</pre>
+              <pre>layout: { <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/* Nested object */</span></pre>
+              <pre class='in-8'>floors: 2,</pre>
+              <pre class='in-8'>bedrooms: 3,</pre>
+              <pre class='in-8'>bathrooms: 2,</pre>
+              <pre class='in-8'>'living rooms': 2,</pre>
+              <pre class='in-8'>kitchens: 1 } </pre> }
+              <br /><br />for (let room in houseListing.layout) {
+              <pre>console.log(`${room}: ${houseListing.layout[room]}`);</pre> }
+              <br /><span>
+                /* Notice the difference between ${room} and the chained [room].
+                <br />${room} is the string belonging to the room iterator. I.e. the key name.
+                <br /> But the chained [room] operator gives you the corresponding value instead. */
+              </span>
+              <br /><span><br />/* Outputs: floors: 2, bedrooms: 3, bathrooms: 2, living rooms: 2, kitchens: 1 */</span>
+            </code>
+          </li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter8a">This</h4>
+        <ul id="chapter8aUL">
+          <li>
+            <mark>This</mark> in Javascript isn't really defined the same way as it is in other languages. In C++, for instance, this
+            can only be used within classes. So, it always points to the object instance of the class where it is used. However, in Javascript, <mark>this</mark> is much
+            more dynamic. It may be used in the global context, where it'll point to the global object. Typically though, it points to whatever object calls it:
+            <code>
+              function myFunc(){
+              <pre>return this; </pre>}
+              <br />console.log(myFunc());<span>/* outputs the global object */</span>
+              <br /><br />let myObj = {
+              <pre>color: 'red' }</pre>
+              <span>/* There's currently no way to refer to myObj itself. So we need to add a method function. */</span>
+              <br /><br />myObj.selfRefer = myFunc; <span>/* Assigns a reference to myFunc.  */</span>
+              <br /><span>/* So now the object definition looks like: </span>
+              <br /><span>myObj = {</span>
+              <pre><span>color: 'red',</span></pre>
+              <pre><span>selfRefer = myFunc   (Here, myFunc is in the "context" of myObj!!) </span></pre>
+              <span>} */</span>
+              <br /><br />console.log(myObj.selfRefer()); <span>/* outputs myObj with all its properties */</span>
+            </code>
+          </li>
+          <li>
+            Scope and context are two different things. Scope is defined by functions and their nested blocks, and therefore determines variable access.
+            Context refers to the object environment where the function is executed. So for instance, all functions in the global namespace are executed within the global context.
+            I.e. they are executed within the global object. But methods can be executed within other objects. Consider an object <mark>carWash</mark>. carWash may have a method <mark>applySoap</mark>. When
+            carWash.applySoap() is called, applySoap() is executed within the context of carWash. Another object may borrow this method though! <mark>washingMachine</mark> may want to use this same method.
+            Instead of rewriting the method, it can just borrow <mark>applySoap</mark> from <mark>washingMachine</mark>:
+            <code>
+              let carWash = {
+              <pre>soapType: 'Armor All ',</pre>
+              <pre>applySoap: function(){</pre>
+              <pre class='in-8'>console.log(this.soapType + ' was applied'); }</pre>
+              }
+              <br /><br />let washingMachine = {
+              <pre>soapType: 'Tide', </pre>
+              <pre>addDetergent: carWash.applySoap</pre>}
+              <br />
+              <br />washingMachine.addDetergent(); <span>/* outputs tide, because the context of this is where the function applySoap is executed, not where it is defined. */</span>
+            </code>
+          </li>
+          <li>So the TLDR is, <mark>this</mark> refers to the object context where the function is invoked</li>
+          <li>The value of <mark>this</mark> depends on how a function is <em>invoked</em>, not how it is defined</li>
+          <li>If it's not attached to an object, it refers to the global object</li>
+          <li>Arrow syntax has NO this binding. It's basically useless with <mark>this</mark> because it will always refer to the global objects unless it's within a scope that already has <mark>this</mark> defined</li>
+          <li>
+            <mark>This</mark> can only be defined by traditional functions.
+            <code>
+              let obj1 = {
+              <pre>uselessFunc: () => this <span>/* No defined this binding. This points to the global object. */</span></pre>
+              }<br />
+              <br />let obj2 = {
+              <pre>tradFun: function(){ <span>/* This is already defined with traditional syntax, */</span></pre>
+              <pre class="in-8">return () => this <span>/* so nested arrowFunctions inherit the value of this */</span></pre>
+              <pre>}</pre>
+              }
+            </code>
+          </li>
+          <li></li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter8b">Other Critical Implementation Details</h4>
+        <ul id="chapter8bUL">
+          <li>
+            Returning functions only returns a reference to a function. It does not execute the returned function's body:
+            <code>
+              function myFunc(){
+              <pre>return cheeseFunc = () => {  <span>/* Returns a function reference 'cheeseFunc' */</span></pre>
+              <pre class="in-8">console.log('cheese');</pre>
+              <pre>}</pre>
+              }
+              <br />console.log(myFunc()); <span>/* Outputs: Function cheeseFunc */</span>
+              <br />console.log(myFunc()()); <span>/* Outputs: cheese. Effectively, cheeseFunc() */</span>
+            </code>
+          </li>
+          <li><em>Context</em>: The value of <mark>this</mark> within a function, determined by how (arrow vs. traditional syntax) and where (which object called it) it's invoked</li>
+          <li>Context is really only a conceptual paradigm for the value of <mark>this</mark>. You can't really see "context." It has no further Javascript implications beyond determining the value of <mark>this</mark></li>
+          <li><em>this</em>: A keyword which refers to the object where it is invoked</li>
+          <li><em>Scope</em>: The accessibility of variables or functions within the code, determined by where they are declared</li>
+          <li>Arrow functions have no automatic <mark>this</mark> binding. Meaning, <mark>this</mark> will inherit its value.</li>
+          <li>Traditional functions have an automatic <mark>this</mark> binding. Meaning, <mark>this</mark> will refer to the object which calls them.</li>
+          <li>
+            Arrow functions nested in a traditional function will inherit the traditional function’s value of this. If not nested within a traditional function, they will inherit this from the global context.
+            <code>
+              let obj1 = {
+              <pre>uselessFunc: () => this <span>/* No defined this binding. This points to the global object. */</span></pre>
+              }
+              <br /><br />
+              let obj2 = {
+              <pre>tradFunc: function(){ <span>/* This is already defined with traditional syntax, */</span></pre>
+              <pre class="in-8">return () => this <span>/* so nested arrowFunctions inherit the value of this */</span></pre>
+              <pre>},</pre>
+              <pre>proof: 'This is an obj2 String'</pre>
+              }
+              <br /><br />
+              console.log(obj1.uselessFunc()); <span>/* Prints undefined in strict mode */</span>
+              <br />console.log(obj2.tradFunc()()); <span>/* Prints obj2 definition. Note the double parentheses. They're needed because tradFunc returns a function reference, it needs to be executed also */</span>
+            </code>
+          </li>
+          <li>const really doesn't mean const. It actually just means it can't be redeclared.</li>
+          <li><mark>typeof</mark> is an operator. No parentheses are needed to use it. It returns a string, so remember to use quotes if checking for equality</li>
+          <li>Functions are objects.</li>
+          <li>Functions can have properties</li>
+          <li>Functions can have variables</li>
+          <li>Objects can NOT have variables (as opposed to C++, where objects consist of member variables and member functions)</li>
+          <li>Objects are ALWAYS collections of key-value pairs.</li>
+          <li>
+            The 2 main differences then, between functions and objects, is that
+            <div class="num-list">
+              1. Functions are executed, while objects are not.<br />
+              2. Functions can contain variables, but objects can not.
+            </div>
+          </li>
+          <li>
+            Because functions are objects, we can imagine under the hood they may look something like this:
+            <div class="screenshots"><img src="images/functions-as-objects.png" /></div>
+          </li>
+          <li>Functions can be created dynamically, or reassigned at any point</li>
+          <li>In a statically-typed language, functions must be known at run time. However, function pointers allow for changes in code direction for flexibility.</li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter8c">More On Creating Objects</h4>
+        <ul id="chapter8cUL">
+          <li>Note that in statically-typed languages, you can't add or remove object properties because the type and size must be known at compile time</li>
+          <li>Javascript is dynamically-typed though, which means the object type can be created and can change at any point</li>
+          <li>So, in C++, the structure of objects must be defined by the blueprint provided by classes/structs</li>
+          <li>In Javascript, type size doesn't need to be known, so you can create an object out of thin air, using object literals</li>
+          <li>
+            Prior to ES6, there were no "classes." So objects were created using the following methods:
+            <div class="num-list">
+              1. Object Literals - Defines the object's properties and methods on the spot<br />
+              2. Factory Functions - Create and return an object directly based on given parameters<br />
+              3. Constructors - Populate an object that has already been created via the <mark>new</mark> keyword
+            </div>
+          </li>
+          <li>
+            Here's an example of an object literal:
+            <code>
+              let restaurant = { <span>/* Literally creates a restaurant called Pizza Heaven */</span>
+              <pre>name: 'Pizza Heaven',</pre>
+              <pre>printLogo: () => console.log('Pizza made by God')</pre>}
+            </code>
+          </li>
+          <li>
+            Below is an example of a factory function. When brickOven() is called, it will create and return a type of pizza object based on the parameters. In this case, all the pizzas have the same number of properties.
+            But a factory function can create many different kinds of objects based on the parameter input.
+            <code>
+              function brickOven(name, temperature) {
+              <pre>if (temperature > 900){ </pre>
+              <pre class="in-8">return { </pre>
+              <pre class="in-12">pizzaType: name,</pre>
+              <pre class="in-12">status: 'burned!'</pre>
+              <pre class="in-8">}</pre>
+              <pre>}</pre>
+              <pre>if (temperature < 200){ </pre>
+              <pre class="in-8">return { </pre>
+              <pre class="in-12">pizzaType: name,</pre>
+              <pre class="in-12">status: 'cold'</pre>
+              <pre class="in-8">}</pre>
+              <pre>}</pre>
+              <pre>return { </pre>
+              <pre class="in-8">pizzaType: name,</pre>
+              <pre class="in-8">status: 'perfectly crispy'</pre>
+              <pre>}</pre>
+              }<br />
+              <br />
+              order1 = brickOven("cheese pizza", 1000);<br />
+              order2 = brickOven("meat pizza", 750);<br />
+              console.log([order1, order2]);
+            </code>
+          </li>
+          <li>Now for the constructor example. Constructors labels should always start with a capital letter.</li>
+          <li>
+            With constructors, the object is created with the <mark>new</mark> keyword. Under the hood, <mark>new</mark> does many things but for now it basically creates the object.
+            The orderTemplate constructor is just there to populate the object with properties and values via <mark>this</mark>. It does not return an object:
+            <code>
+              function OrderTemplate(customerName, pizzaType){
+              <pre>this.customerName = customerName;</pre>
+              <pre>this.pizzaType = pizzaType;</pre>
+              <pre>switch (pizzaType) {</pre>
+              <pre class="in-8">case 'cheese pizza':</pre>
+              <pre class="in-12">this.cost = 12;</pre>
+              <pre class="in-12">break;</pre>
+              <pre class="in-8">case 'meat pizza':</pre>
+              <pre class="in-12">this.cost = 16;</pre>
+              <pre class="in-12">break;</pre>
+              <pre class="in-8">case 'hawaiian pizza':</pre>
+              <pre class="in-12">this.cost = 18;</pre>
+              <pre class="in-12">break;</pre>
+              <pre class="in-8">default: </pre>
+              <pre class="in-12">this.cost = 30;</pre>
+              <pre class="in-12">break;</pre>
+              <pre>}</pre>}<br />
+              let order1 = new orderTemplate('Jimmy', 'meat pizza');<br />
+              console.log(order1);
+            </code>
+          </li>
+          <li>
+            In practice, the only thing different about constructors and regular functions is constructors are constructors because they're called with the <mark>new</mark> keyword. Without <mark>new</mark>, they act
+            as regular functions.
+          </li>
+          <li>
+            ES6 introduced a shorthand for creating objects within Factory functions:
+            <code>
+              <span>/* Instead of this: */</span><br />
+              function carFactory(model, cost, color){
+              <pre>return { </pre>
+              <pre class="in-8">model: model,</pre>
+              <pre class="in-8">cost: cost,</pre>
+              <pre class="in-8">color: color</pre>
+              <pre>}</pre>}
+              <br /><span>/* Use the new shorthand: */</span><br />
+              function carFactory(model, cost, color){
+              <pre>return { </pre>
+              <pre class="in-8">model,</pre>
+              <pre class="in-8">cost,</pre>
+              <pre class="in-8">color</pre>
+              <pre>}</pre>}
+            </code>
+          </li>
+          <li>There's another useful shorthand syntax, which is for retrieving object property values, called <em>destructured assignment</em>.</li>
+          <li>
+            Here's how to implement the destructured assignment shorthand:
+            <code>
+              let boat{
+              <pre>name = 'Black Pearl'</pre>
+              <pre>boatType = 'Pirate Ship',</pre>
+              <pre>captain = 'Jack Sparrow'</pre>
+              <pre>crewSize = 36</pre>}<br /><br />
+              <span>/* let crewSize = boat.crewSize; would be the normal way to do this */</span><br /><br />
+              let { crewSize } = boat; <span>/* shorthand using the object boats key, crewsize */</span>
+            </code>
+          </li>
+          <li>Don't forget, the <mark>Object</mark> class also has its own static methods, such as Object.freeze(yourObj), or Object.keys(yourObj). And it has instance methods as well, such as .hasOwnProperty()</li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter8d">Closure</h4>
+        <ul id="chapter8dUL">
+          <li>In Javascript, when you <mark>return anyFunction</mark>, you're returning a reference (not a copy) to wherever <mark>anyFunction</mark> is</li>
+          <li>You're allowed to return nested functions, this can create what is called a <em>closure</em></li>
+          <li><em>Closure</em>: A concept where a function retains access to it's lexical scope, even when the function is executed outside of that scope</li>
+          <li>Closures remember all variables from the scope in which it was created, even after the scope has exited.</li>
+          <li>
+            In C++, if you tried to return a function reference (if it were possible), the reference would be dangling when executed, and
+            any variables from the lexical scope it was defined would be dangling
+          </li>
+          <li><em>Lexical</em>: the physical structure and placement of code that you can visually see</li>
+          <li>
+            Here's a demo of the concept of closure:
+            <code>
+              function outerFunc(){
+              <pre>let num = 4; <span>/* num is not accessible outside of outerFunc() */</span></pre>
+              <pre>function innerFunc(){ <span>/* inner function declaration */</span></pre>
+              <pre class="in-8">console.log(num); <span>/* innerFunc() however remembers its scope when called */</span></pre>
+              <pre>}</pre>
+              <pre>return innerFunc; <span>/* this is a reference to the inner function */</span></pre>
+              }<br />
+              <br />
+              let myNum = outerFunc(); <span>/* runs outerFunc and stores the reference to innerFunc */</span><br />
+              myNum(); <span>/* innerFunc is run, outputs: 4 */</span>
+            </code>
+          </li>
+          <li>
+            When <mark>myNum()</mark> is run, it contains a reference to <mark>innerFunc</mark>. <mark>innerFunc</mark> remembers it's lexical scope (it's physical placement within the code) and all of the variables that
+            it had access to, and is able to produce the result 4.
+          </li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter8e">Access Functions</h4>
+        <ul id="chapter8eUL">
+          <li>Prior to ES6, there were no "public:" or "private:" access specifiers like there were in other languages</li>
+          <li>
+            In order to create private variables, you would do this through function block scope <mark>closure</mark>:
+            <code>
+              function CreateEmployee(name, salary, ssn){
+              <pre>let _name = name;</pre> <span>/* the constructor holds the private values, */</span>
+              <pre>let _salary = salary;</pre>
+              <pre>let _ssn = ssn;</pre>
+              <br />
+              <pre>this.setName = function(name){ _name = name; }</pre>
+              <pre>this.setSalary = function(salary){ _salary = salary; }</pre>
+              <pre>this.setSSN = function(ssn){ _ssn = ssn; }</pre>
+              <pre>this.getName = function(){ return _name; }</pre>
+              <pre>this.getSalary = function(){ return `$${_salary.toLocaleString()}`; } <span>/* adds commas to salaries */</span></pre>
+              <pre>this.getSSN = function(){ return _ssn; }</pre>}
+              <br />const employees = [new CreateEmployee('Jim', 152000, `#${739572057}`), new CreateEmployee('Bernard', 75000, `#${395728436}`)];<br />
+              <br /><span>/* employees are created in an array, with each index using the new keyword and constructor.*/</span>
+              <br />console.log(employees[0].getSalary()) <span>/* Outputs: $152,000. The value of Jim's salary. */</span>
+            </code>
+          </li>
+          <li>
+            Factory functions can also use closure to hide private variables:
+            <code>
+              function person(name, age){
+              <pre>_age = age; <span>/* _age is only accessible in the constructor scope */</span></pre>
+              <pre>_name = name; <span>/* _name is only accessible in the constructor scope */</span></pre>
+              <pre>return {</pre>
+              <pre class="in-8">setName: function (name){ _name = name ; }, <span>/* return an object with get/set methods */</span></pre>
+              <pre class="in-8">setAge: function (age){ _age = age; }, <span>/* remember not to forget your commas! */</span></pre>
+              <pre class="in-8">getName: function (){ return _name; }, </pre>
+              <pre class="in-8">getAge: function (){ return _age; } </pre>
+              <pre>}</pre>
+              }<br />
+              console.log(person('Brianna', 42).getName()) <span>/* Outputs: Brianna */</span>
+              <br /><span>/* notice how you can chain .getName() because the factory function returns the object itself */</span>
+            </code>
+          </li>
+          <li>
+            Post ES5, rather than using getName() and setName() as a method names, you can use <mark>get</mark> and <mark>set</mark>:
+            <code>
+              function carFactory(model, color, price){
+              <pre>_model = model;</pre>
+              <pre>_color = color;</pre>
+              <pre>_price = price;</pre>
+              <pre>return {</pre>
+              <pre class="in-8">get model(){ return _model; }, <span>// Note that "this" is not used here</span></pre>
+              <pre class="in-8">get color(){ return _color; }, <span>// _model, _color, _price belong to the function, </span></pre>
+              <pre class="in-8">get price(){ return _price; }, <span>// not the returned object </span></pre>
+              <pre class="in-8">set model(model){ _model = model; }, </pre>
+              <pre class="in-8">set color(color){ _color = color; }, </pre>
+              <pre class="in-8">set price(price){ _price = price; } </pre>
+              <pre>}</pre>
+              }<br /><br />
+              let myCar = carFactory('Highlander', 'white', 45999);<br />
+              console.log(myCar.model) <span>/* notice how this looks like you're just logging a property */</span><br />
+              myCar.color = "black"; <span>/* no parentheses are used in this syntax */</span><br />
+              console.log(myCar.color); <span>/* outputs: black */</span>
+            </code>
+          </li>
+          <li>Notice that calling getters/setters visually appears like you're viewing or changing a property, eliminating any need for parentheses or function calls on an object instance.</li>
+          <li>Note that object literals cannot hold variables, only properties</li>
+          <li>
+            Also note that object literals can't provide scope (i.e. they can't hide properties). If they did, accessing/modifying/adding/removing properties wouldn't be possible, which ruins the point for dynamic objects.
+            Therefore, by default, properties are public. If you want to make their values private, you'd have to employ function scope to hide them. But, getting/setting (which must be public methods) wouldn't have
+            access to those privately made properties. Therefore, object literals can't contain accessible private variables:
+            <code>
+              let objLiteral = {
+              <pre>giveName: function(name){ <span>/* Employs function scope to hide variable _name */</span></pre>
+              <pre class="in-8">let _name = name; </pre>
+              <pre>},</pre>
+              <pre>get name(){ return _name ; }<span>/* _name is not in scope */</span></pre>
+              }<br />
+
+              <br />
+              objLiteral.giveName('Charlie');<br />
+              console.log(objLiteral.name); <span>/* prints undefined */</span>
+            </code>
+          </li>
+          <li>
+            And this doesn't actually create private variables:
+            <code>
+              let objLiteral = {
+              <pre>_age: 56, <span>/* publicly accessible */</span></pre>
+
+              <pre>get age(){ return this._age; },</pre>
+              <pre>set age(age){ this._age = age; }</pre>
+              }<br />
+
+              <br />
+              console.log(objLiteral.age); <span>/* contains a reference to the age() function, and prints 56 */</span><br />
+              objLiteral.age = 'IAMAHACKERHAHAHA!!'; <span>/* the property is public, so anyone can change it */</span>
+              console.log(objLiteral.age); <span>/* outputs: IAMAHACKERHAHAHA!! */</span>
+            </code>
+          </li>
+          <li>
+            Given all of these problems, ES6 introduced the <mark>#</mark> and classes which will create private fields:
+            <code>
+              class mailingInfo {
+              <pre>#myAddress = '52 Blueberry Lane';</pre>
+              <pre>get address(){ return this.#myAddress; } </pre>
+              <pre>set address(address){ this.#myAddress = address; }</pre>}<br /><br />
+              const John = new mailingInfo();<br />
+              console.log(John.address); <span>/* outputs: 52 Blueberry Lane */</span><br />
+            </code>
+          </li>
+
+        </ul>
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ████
+    ██░░░░██░██                ██████   ░██                    █░░░ █
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░█   ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█  ░ ████
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    ░░░█
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██        █
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███       █
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░       ░          -->
+
+
+        <h2 id="chapter9">Chapter 9</h2>
+        <h3 class="italic">Higher Order Functions & Callbacks</h3>
+        <ul id="chapter9UL">
+          <li><em>Higher order functions</em>: Functions that accept other functions as parameters and/or return functions as output.</li>
+          <li>
+            When a function reference is assigned to a variable, the variable and function reference point to the same address
+            <code>
+              let firstFunc = () => 2+2;<br />
+              secondFunc = firstFunc; <span>/* secondFunc now points to the same address as firstFunc */</span><br /><br />
+              console.log(secondFunc === firstFunc); <span>/* This prints true */</span><br />
+              console.log(secondFunc()); <span>/* outputs: 4 */</span>
+            </code>
+          </li>
+          <li>
+            All Javascript objects are "first-class." This includes functions. "First-class" means they can be assigned to variables, and used as parameters or return values in functions.
+            This is not the case in many languages. For instance, in C++, you can't pass arguments as parameters or return values in a function.
+          </li>
+          <li>A <em>higher-order function</em>is a function that accepts functions as parameters and/or returns functions.</li>
+          <li>Higher-order functions greatly expand the options for control flow, enabling more flexible and dynamic execution paths.</li>
+          <li>A callback function a function is passed in as a parameter to a higher-order function</li>
+          <li>To create a callback function, pass it <em>without</em> the execution parentheses. Otherwise, it will just pass in the return result.</li>
+          <li>
+            Here's a very simple callback function example:
+            <code>
+              function callback1(name){
+              <pre>return ('My name is ' + name);</pre>
+              }<br /><br />
+
+              function callback2(name){
+              <pre>return (name + 'is my DAWG');</pre>
+              }<br /><br />
+
+              function higherOrder(func, name){ <span>/* func is passed by reference as an argument */ </span>
+              <pre>console.log(func(name)); <span>/* func is executed */</span></pre>
+              }<br /><br />
+
+
+              higherOrder(callback1, 'Jeff'); <span>/* outputs: 'My name is Jeff' */</span>
+            </code>
+          </li>
+          <li>
+            Now imagine there were 100 callbacks options listed in an array. You could use a higherOrder function to execute these in a while loop. Normally you'd have to list out all 100!
+            But what if you didn't always want it to be in sequential order? With a higherOrder function, you could simply iterate through index numbers in any order without having to list callbacks manually:
+            <code>
+              let callbackArray = [ <span>/* super large list of callback functions */</span>
+              <pre>(name)=>'Hi, ' + name,</pre>
+              <pre>(name)=>'Hello, ' + name,</pre>
+              <pre>(name)=>'Greetings, ' + name,</pre>
+              <pre>(name)=>'Good day, ' + name,</pre>
+              <pre>(name)=>'Hola, ' + name,</pre>
+              <pre>(name)=>'Sup, ' + name,</pre>
+              <pre>(name)=>'Suhhh, ' + name,</pre>
+              <pre>(name)=>'Wadddup ' + name,</pre>
+              <pre>(name)=>'Skrrt skrtt ' + name,</pre>
+              <pre>(name)=>'Dolla dolla ' + name,</pre>
+              <pre>(name)=>'Ay ' + name,</pre>
+              <pre>(name)=>'Oi, ' + name,</pre>
+              <pre>(name)=>'MEH ' + name,</pre>
+              <pre>(name)=>'Ello, ' + name,</pre>
+              <pre>(name)=>'How goes it, ' + name,</pre>
+              <pre>(name)=>'Wyd ' + name,</pre>
+              <pre>(name)=>'My DAWG ' + name,</pre>
+              <pre>(name)=>'Mi hoy minoy, ' + name,</pre>
+              <pre>(name)=>'What\'s good, ' + name,</pre>
+              <pre>(name)=>'Bartledoo, '</pre>
+              ]<br /><br />
+
+              function calcSkip(length){ <span>/* creates a periodic wave shape of iterating through the array */</span>
+              <pre>if(typeof calcSkip.skip === 'undefined'){</pre>
+              <pre class="in-8">calcSkip.skip = 0;</pre>
+              <pre>}</pre>
+              <pre>if(calcSkip.skip === 0)</pre>
+              <pre class="in-8">calcSkip.direction = 'forward';</pre>
+              <pre>if(calcSkip.skip === length)</pre>
+              <pre class="in-8">calcSkip.direction = 'backward';</pre>
+              <pre>if(calcSkip.direction === 'forward')</pre>
+              <pre class="in-8">return ++calcSkip.skip;</pre>
+              <pre>else</pre>
+              <pre class="in-8">return --calcSkip.skip;</pre>
+              }<br /><br />
+
+              function calcIndex(length){ <span>/* calculates the index based on the complicated iterator above */</span>
+              <pre>if(typeof calcIndex.index === 'undefined'){</pre>
+              <pre class="in-8">calcIndex.index = 1;</pre>
+              <pre class="in-8">return calcIndex.index - 1;</pre>
+              <pre>} else {</pre>
+              <pre class="in-8">calcIndex.index += calcSkip(length);</pre>
+              <pre>}</pre>
+              <pre>if (calcIndex.index > length)</pre>
+              <pre class="in-8">calcIndex.index %= length;</pre>
+              <pre class="in-8">return calcIndex.index - 1;</pre>
+              }<br /><br />
+
+
+              function greetPerson(index, greeting, person){ <span>/* Higher order function acting as a callback hub */</span>
+              <pre>return(' === ' + (index+1) + '. ' + greeting(person));</pre>
+              }<br /><br />
+
+              for(let i = 0; i < 1000; i++){ <span>/* Calls the higher order function with the calculated index */</span>
+              <pre>index = calcIndex(callbackArray.length);</pre>
+              <pre>console.log('GREETING' + (i+1) + greetPerson(index, callbackArray[index], 'Frank'));</pre>
+              }
+            </code>
+          </li>
+          <li>
+            It's a trivial example really, but demonstrates how nearly impossible this could've been with a large list of complicated
+            callback functions. Every function in the callback array would've had to have been called and executed, which, wouldn't have been possible to do in a such a
+            periodic fashion.
+          </li>
+          <li>
+            Here's another example of a callback, where a higher order function forms as a hub for multiple callback options:
+            <code>
+              function mult(){<span>   /* Used to encapsulate a callNumber variable */</span>
+              <pre>let callNumber = 1;</pre>
+              <pre>function innerCalc(){</pre>
+              <pre class="in-8">callNumber *= 2;</pre>
+              <pre class="in-8">return callNumber; </pre>
+              <pre>}</pre>
+              <pre>innerCalc.reset = () => callNumber = 1; <span>/* innerCalc is an object, so we can add a method to it */</span></pre>
+              <pre>return innerCalc; <span>/* innerCalc is returned as a reference, just waiting to be executed */</span></pre>
+              }<br /><br />
+
+              function div(){
+              <pre>let callNumber = 2;</pre>
+              <pre>function innerCalc(){</pre>
+              <pre class="in-8">callNumber /= 2;</pre>
+              <pre class="in-8">return callNumber; </pre>
+              <pre>}</pre>
+              <pre>innerCalc.reset = () => callNumber = 2;</pre>
+              <pre>return innerCalc;</pre>
+              }<br /><br />
+
+
+              grow = mult();<span>/* grow now references its innerCalc */</span><br />
+              shrink = div();<br /><br />/* shrink now references its innerCalc */
+
+              function makeArray(intervalType, length){
+              <pre>myArray = []</pre>
+              <pre class="in-8">for(let i = 0; i < length; i++){</pre>
+              <pre class="in-8">myArray.push(intervalType());<span>/* Either grow or shrink will be called and executed () here */</span></pre>
+              <pre>}</pre>
+              <pre>return myArray;</pre>
+              }<br /><br />
+
+              console.log(makeArray(grow, 10));<br />
+              grow.reset(); <span>/* innerCalc resets outer callNumber to 1 */</span><br />
+              console.log(makeArray(grow, 10));<br />
+
+            </code>
+          </li>
+        </ul>
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter9a" class="italic">Iterators</h4>
+        <ul id="chapter9aUL">
+          <li>
+            <mark>.forEach()</mark> is a method for all arrays. The built-in method will iterate through each element in an array, and apply whatever function you'd like:
+            <code>
+              let numArray = [0, 1, 2, 3]<br />
+              numArray.forEach((num)=>console.log(num*num)) <span>/* outputs: 0, 1, 4, 9 */</span>
+            </code>
+          </li>
+          <li>
+            <mark>.map()</mark> is the same thing, but it returns an array. You'll need to store this array to save it's output as a useable map:
+            <code>
+              let flavorArr = ['Meatball', 'Ham', 'Chicken'];<br /><br />
+              let soups = flavorArr.map((type) => type + ' Soup');<br />
+              let pizzas = flavorArr.map((type) => type + ' Pizza');<br />
+              let sandwiches = flavorArr.map((type) => type + ' Sandwich');<br /><br />
+              console.log(soups);<br />
+              console.log(pizzas);<br />
+              console.log(sandwiches);<br />
+              <span>/* outputs all the flavor types in the soups, pizzas, and sandwiches arrays */</span>
+            </code>
+          </li>
+          <li>
+            <mark>.filter()</mark> is similar to <mark>.map()</mark>, but the callback needs to return true or false. If the condition is met, the element is added to the new array
+            <code>
+              let words = ['banana', 'cat', 'baseball', 'sun', 'tropical', 'tent'];<br />
+              const newArray = words.filter((word)=>word.length < 5);<br />
+              console.log(newArray);<span>/* outputs: ['cat', 'sun', 'tent'] */</span>
+            </code>
+          </li>
+          <li>
+            <mark>.findIndex()</mark> will return the index of the first element meets the condition. This should be stored in a variable:
+            <code>
+              let strings = ['hi', 'there', 'this', 'is', 'an', 'array'];<br />
+              const startsWithTH = strings.findIndex((str) => str.slice(0, 2) === 'th');<br />
+              console.log(startsWithTH); <span>/* outputs: 1 */</span><br />
+              <span>/* Note how this doesn't pick up index 2, 'this'. findIndex() stops after the first true evaluation. */</span>
+            </code>
+          </li>
+          <li>
+            <mark>.reduce()</mark> iterates through an array and calculates a total or concatenates strings. An accumulator can provide the running total of the array at each index.
+            <code>
+              let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+              <pre>const concatLetters = letters.reduce(function(accumulator, currentVal){</pre>
+              <pre>console.log(accumulator); <span>/* adds a new letter each time */</span></pre>
+              <pre>return accumulator + currentVal;</pre>
+              })<br />
+              console.log(concatLetters); <span>/* outputs: ABCDEFG */</span><br />
+              console.log(typeof concatLetters); <span>/* Note that this is a string this time, not an array */</span>
+            </code>
+          </li>
+          <li>When looking for array iterators, you can find them under the "Instance Methods" section on MDN, because they act upon the array object instance</li>
+          <li>
+            <mark>.every()</mark> will return a boolean value of whether or not every element met the criteria
+            <code>
+              let arr = [2, 4, 6, 8]<br />
+              console.log(arr.every((num)=> num % 2 === 0 ))<span>/* outputs: True */</span><br />
+            </code>
+          </li>
+          <li>Choosing an iterator often comes down to what it returns, whether it returns a new array, a value, a boolean, etc.</li>
+          <li>
+            Note that <mark>.forEach()</mark> automatically passes arguments to callback functions. It passes the current element iteration, then passes the index number as a second argument if
+            the callback has 2 parameters, and then will pass the array itself if it has 3 parameters. If a callback has 4+ parameters, forEach will still call the callback function for each element,
+            but those additional parameters will be undefined:
+            <code>
+              function callback(first, second, third, fourth){
+              <pre>console.log(first + " is at " + second + " index in array: " + third + ". " + fourth);</pre>
+              }<br />
+
+              let myArr = ['cat', 'dog', 'fish'];<br /><br />
+
+              myArr.forEach(callback);
+              <span>
+                <br />/* outputs: <br />
+                cat is at 0 index in array: cat,dog,fish. undefined<br />
+                dog is at 1 index in array: cat,dog,fish. undefined<br />
+                fish is at 2 index in array: cat,dog,fish. undefined */
+              </span>
+            </code>
+          </li>
+          <li>
+            <mark>.sort()</mark> will sort through an array based on a given function. If the function returns positive, it will [b, a]. If the function returns negative, [a, b]. If the function returns 0, it will keep
+            the original order of a and b:
+            <code>
+              let num = [1, 2, 4, 3]<br />
+              num.sort((a, b) => a < b ? -1 : 1) <span>/* No copy is made by .sort(), num is sorted in place */</span>
+              <br /><span>/* Alphabetically 'a' is less than 'b'. So, is 'a' less than 'b'? Don't sort. Else sort. */</span><br /><br />
+              console.log(num) <span>/* outputs [1, 2, 3, 4] */</span>
+            </code>
+          </li>
+          <li>
+            <mark>.includes()</mark> will return true or false if an array contains a specified value:
+            <code>
+              let arr = ['jellyfish', 'starfish', 'goldfish', 'shark']<br /><br />
+              if (arr.includes('shark')) <span>/* Evaluates true */</span>
+              <pre>console.log('Fish are friends not food!')</pre>
+            </code>
+          </li>
+        </ul>
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter9b" class="italic">Errors and Debugging</h4>
+        <ul id="chapter9bUL">
+          <li>
+            An error stack trace contains:<br />
+            <div class="num-list">
+              1. The file where the error occured<br />
+              2. The line (and sometimes character) where the error occurred<br />
+              3. The type of error thrown (typically reference, syntax, or type errors)<br />
+              4. A description of the error
+            </div>
+            <div class="screenshots"><img src="images/error-stack.png" /></div>
+            <div class="screenshots"><img src="images/error-types.png" /></div>
+          </li>
+        </ul>
+
+
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ██   ████
+    ██░░░░██░██                ██████   ░██                    ███  █░░░██
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░░██ ░█  █░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█   ░██ ░█ █ ░█
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    ░██ ░██  ░█
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      ░██ ░█   ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███      ████░ ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░      ░░░░  ░░░░      -->
+
+
+        <h2 id="chapter10">Chapter 10</h2>
+        <h3 class="italic">The Script Element</h3>
+        <ul id="chapter10UL">
+          <li>You can use a script tag with the script directly inside the HTML file. But it's better to instead to use src='./fileName.js' as an attribute and keep a <em>separation of concerns</em></li>
+          <li>Even if your linking the script file, you'll still need to add a closing script tag</li>
+          <li>Because HTML parsers render elements in the order they appear, a heavy script could delay subsequent HTML elements from being rendered quickly, resulting in poor user experience</li>
+          <li>If scripts are stacked on top of each other, they should be ordered by position of dependecy</li>
+          <li>
+            Use a <mark>defer</mark> attribute if you want the HTML parser to render the entire HTML file before loading the script:
+            <div class="screenshots"><img src="images/defer.png" /></div>
+          </li>
+          <li>
+            The <mark>async</mark> attribute allows the parser to download the script while rendering the HTML file. The script will execute when downloaded, irrespective of when the HTML file renders:
+            <div class="screenshots"><img src="images/async.png" /></div>
+          </li>
+        </ul>
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter10a" class="italic">The DOM</h4>
+        <ul id="chapter10aUL">
+          <li>The DOM is a tree-like model that organizes the HTML document as an object</li>
+          <li>The DOM is implemented by browsers as the link between HTML and scripting languages. It is an API.</li>
+          <li>The DOM is not Javascript per se, but Javascript has the ability to interact with it.</li>
+          <li>
+            The DOM is the only way to interact with the structure of web pages, and Javascript is the only language that can natively interact with it. Other languages need to compile to Javascript
+            if they want to interact with a web page.
+          </li>
+          <li>When the browser loads an HTML file, it constructs the DOM. The DOM has a bunch of object properties and methods for interacting with it.</li>
+          <li>Nodes are HTML elements, or their inside text, or a HTML comment node.</li>
+          <li>Text nodes are the actual HTML text inside elements</li>
+          <li>The DOM allows access to each element's attributes such as id, style, class, etc. </li>
+          <li>Follow the tree like structure to access elements, such as <mark>document.body</mark></li>
+          <li>
+            <mark>.innerHTML</mark> allows you to change the contents of any element, such as
+            <code>
+              <span>/* document.body.p.innerHTML = 'text'; --> incorrect, .body doesn't have a direct p property */</span><br />
+              document.querySelector('p').innerHTML = 'text'; <span>/* correct */</span>
+            </code>
+          </li>
+          <li>
+            In this sense you can actually add new HTML code like so:
+            <code>document.body.innerHTML = '&lt;h1&gt;Just ruined your whole webpage&lt;/h1&gt;'</code>
+          </li>
+          <li>
+            Note that <mark>document.body</mark> doesn't have element properties past this point. This is because not all websites are structured the same. To traverse into deeper nodes, you have to use
+            <mark>.querySelector</mark> or <mark>.getElement</mark> methods
+          </li>
+          <li><mark>.querySelector()</mark> is a method for specifying CSS selectors. But it only returns the FIRST element of the type.
+          <li><mark>.querySelectorAll()</mark> is a CSS style selector that returns a NodeList (a container similar to an array)</li>
+          <li><mark>.getElementByID()</mark> is another method, allowing ID specification to get an element</li>
+          <li><mark>.getElementsByClassName()</mark> will return a NodeList of all elements with a specified class</li>
+          <li>
+            <mark>.getElementsByTagName()</mark> will return a NodeList of all elements with the specified tag
+            <code>
+              <span>/* Return a node with: */</span><br />
+              document.querySelector('p').innerHTML = 'This is the first p';<span>/* note, this is a CSS selector */</span><br />
+              <span>/* Return an HTML element with: */</span><br />
+              document.getElementById('awesome').innerHTML = 'This is an ID called awesome';<br /><br />
+              <span>/* Return a NodeList node with: */</span><br />
+              document.querySelectorAll('p')[5].style.color = 'blue'<br /><br />
+              <span>/* Return an HTMLCollection element with: </span><br />
+              document.getElementsByClassName('blue')[0].innerHTML = 'This is the first element with blue class';<br />
+              document.getElementsByTagName('li')[0].innerHTML = 'This is the first element with the list tag';<br />
+
+            </code>
+          </li>
+          <li>If a forEach method is needed, use .querySelectorAll because it returns a NodeList which has forEach</li>
+          <li>
+            Note that document.body doesn't contain a .getElementById() method, only the document object does, because there an ID can only belong to a single element in the whole document, so there's no reason
+            to specify .body
+            <aside class="warning">
+              Important: The DOM's .style object does't use hyphenated properties, like background-color. Instead, use backgroundColor. Find out more at
+              <a href="https://www.w3schools.com/jsref/dom_obj_style.asp" target="_blank" rel="noopener noreferrer">HTML DOM Style Object</a>
+            </aside>
+          </li>
+          <li>The <mark>.parentNode</mark> returns the parent of the specified element</li>
+          <li>The <mark>.children</mark> returns an array of all the child elements</li>
+          <li><mark>.parentNode</mark> will return <mark>null</mark> on the document element, which is the root node</li>
+          <li><mark>.children</mark> will return <mark>null</mark> on any element which doesn't have children</li>
+          <li>
+            You can save any element within a variable, such as:
+            <code>
+              let top = document.querySelector('h1');<br />
+              top.innerHTML = 'NEW TITLE! HAHAA!';
+            </code>
+          </li>
+          <li>
+            If you want to change every type of a particular node, such as all h2's, you'll have to use a NodeList selector, and iterate over the list:
+            <code>
+              document.querySelectorAll('h2').forEach((node) => node.style.color = 'red')
+            </code>
+          </li>
+          <li>
+            HTMLCollections do not have a for.each() method though. They will have to be converted to an array first before iteration:
+            <code>
+              Array.from(document.getElementsByTagName('h2')).forEach((el)=>el.style.color = 'red')
+            </code>
+          </li>
+          <li>
+            <mark>.createElement()</mark> is a method of the <mark>document</mark> object and can be used to create new elements. This does not append the element though. For
+            that you need <mark>.appendChild()</mark>. These two often work together.
+          </li>
+          <li>
+            <mark>.appendChild()</mark> will attach the newly created element to whatever parent node you'd like:
+            <code>
+              let newHeader = document.createElement('h2');<br />
+              newHeader.class = big;<br />
+              newHeader.innerHTML = 'I AM SOME BIG TEXT';<br />
+              document.querySelector('article').appendChild(newHeader);
+            </code>
+          </li>
+          <li>
+            There are several other ways to place new HTML elements. Here's a complete list:
+            <div class="num-list">
+              1. appendChild: <mark>parentElement.appendChild(newEl)</mark><br />
+              2. replaceChild: <mark>parentElement.replaceChild(newEl, oldEl)</mark><br />
+              3. insertBefore: <mark>parentElement.insertBefore(newEl, referenceElement)</mark><br />
+              4. innerHTML: <mark>parentElement.innerHTML = '&lt;p&gt;New element&lt;/p&gt;'</mark><br />
+              5. insertAdjacentHTML: <mark>element.insertAdjacentHTML('beforebegin', '&lt;p&gt;new paragraph&lt;/p&gt;')</mark><br />
+              6. insertAdjacentElement: <mark>parentElement.insertAdacentElement('beforebegin', newEl)</mark><br />
+              7. insertAdjacentText: <mark>parentElement.insertAdjacentText('beforebegin', 'new text')</mark><br />
+              8. prepend: <mark>parentElement.prepend(newEl)</mark><br />
+              9. append: <mark>parentElement.append(newEl)</mark>
+            </div>
+          </li>
+          <li>
+            <mark>.removeChild()</mark> will remove any child of a parent node:
+            <code>
+              let para3 = document.querySelectorAll('p')[2];<br />
+              para3.parentNode.removeChild(para3);
+            </code>
+          </li>
+          <li>
+            You can also just set an HTMLelement's <mark>.hidden</mark> property to true if you want to hide, but not remove it completely:
+            <code>
+              document.getElementsByTagName('h2')[1].hidden = true;
+            </code>
+          </li>
+          <li>
+            <mark>.onclick</mark> is an element property that can execute a function once a click event occurs on an element:
+            <code>
+              let myEl = document.getElementById('myButton');<br />
+              myEl.onclick = () => myEl.style.backgroundColor = 'red';
+            </code>
+            <div class="screenshots"><img src="images/review.png" /></div>
+          </li>
+        </ul>
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ██   ██
+    ██░░░░██░██                ██████   ░██                    ███  ███
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░░██ ░░██
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█   ░██  ░██
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    ░██  ░██
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      ░██  ░██
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███      ████ ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░      ░░░░ ░░░░       -->
+
+
+        <h2 id="chapter11">Chapter 11</h2>
+        <h3 class="italic">EventTargets</h3>
+        <ul id="chapter11UL">
+          <li>
+            The <em>EventTarget</em> interface is a set of methods implemented by many web API's, including the DOM, the Battery API, the AudioNode API, etc. Not all web API's implement the EventTarget interface.
+            However, those that do have the ability to:
+            <div class="num-list">
+              1. Add event listeners<br />
+              2. Remove event listeners<br />
+              3. Dispatch events
+            </div>
+          </li>
+          <li>
+            When an EventTarget object adds an "event listener", the listener is simply a key-value pair that ties a type of event (such as a mouse click, a keyboard press, resizing of a window) to a function.
+            This mechanism then executes a function when the event occurs. We can use <mark>.addEventListeners()</mark> to create this mechanism, or "event listener":
+            <code>
+              let firstLink = document.querySelector('a');<br />
+              function grow(){  <span>/* grow is an event handler. It "handles" the click event */</span><br />
+              <pre class="in-8">firstLink.style.fontSize = '50px';</pre>
+              }<br />
+
+              firstLink.addEventListener('click', grow)<span>/* When firstLink is clicked, it will grow in size */</span>
+            </code>
+          </li>
+          <li>
+            We can also use the built in <mark>.onevent</mark> property of DOM elements to accomplish the same result as <mark>.addEventListener()</mark>:
+            <code>
+              function blowStuffUp(){ <br />
+              <pre class="in-8">bigRedButton.innerHTML = 'BOOM!';</pre>
+              }<br />
+
+              let bigRedButton = document.getElementById('bigRedButton');<br />
+              bigRedButton.onclick = blowStuffUp
+            </code>
+          </li>
+          <li>Note however, that <mark>.onevent</mark> can only add one event handler, while <mark>.addEventListener()</mark> can add multiple event handlers. </li>
+          <li>
+            When <mark>.addEventListener()</mark> or <mark>.onevent</mark> is added, the browser internally creates and updates a key-value list for each EventTarget, separately from the element itself.
+            This list isn't directly accessible. So internally it would look something like this:
+            <div class="screenshots"><img src="images/EventTarget.png" /></div>
+          </li>
+          <li>Notice that one EventTarget can have many different types of events, tied to many different event handlers.</li>
+          <li>
+            To remove event listeners (which is a key-value pair), we will need to specify the event/eventHandler pair:
+            <code>
+              const bigButton = document.querySelector('.big-button')<br /><br />
+              function small(){<br />
+              <pre class="in-8">bigButton.innerHTML = 'small';</pre>
+              }<br />
+              function shy(){
+              <pre class="in-8">bigButton.innerHTML = 'im scurred';</pre>
+              }<br /><br />
+              bigButton.addEventListener('click', small);<br />
+              bigButton.addEventListener('mouseover', shy); <span>/* an EventTarget can have multiple event listeners */</span><br />
+              bigButton.removeEventListener('click', small); <span>/* We need to specify which event one */</span>
+            </code>
+            <aside class="warning">Important: Always avoid anonymous functions for event handlers. If one is added, it cannot be removed because it is unnamed.</aside>
+          </li>
+          <li>
+            When an event occurs, an event object is created. This event object has relevant methods and properties to the event, such as <mark>Event.type</mark>, which
+            returns the type of event it is, or <mark>Event.target</mark>, which returns the target to which the event was attached, or <mark>Event.timeStamp</mark>, which returns
+            the exact time the event occured in milliseconds.
+          </li>
+          <li>
+            If you use <mark>event.Target</mark>, that is the HTML element itself. You can then chain .style or .innerHTML, or whatever you want to it:
+            <code>
+              const animalNoiseList = {<br />
+              <pre class="in-8">list: {},</pre>
+              <pre class="in-8">addAnimal: function (animal, noise){</pre>
+              <pre class="in-12">this.list[animal] = noise;</pre>
+              <pre class="in-8">},</pre>
+              <pre class="in-8">makeNoise: function (animal){</pre>
+              <pre class="in-12">return this.list[animal]; </pre>
+              <pre class="in-8">}</pre>
+              }<br /><br />
+
+
+              function makeAnimalButton(name, noise){
+              <pre class="in-8">const animal = document.createElement('button');</pre>
+              <pre class="in-8">animal.id = name;</pre>
+              <pre class="in-8">animal.innerHTML = name; </pre>
+              <pre class="in-8">animal.style.fontSize = '28px';</pre>
+              <pre class="in-8">animal.style.color = 'blanchedalmond';</pre>
+              <pre class="in-8">animal.style.backgroundColor = 'darkred';</pre>
+              <pre class="in-8">animal.style.padding = '.25em';</pre>
+              <pre class="in-8">animal.style.margin = '40px';</pre>
+              <pre class="in-8">document.body.appendChild(animal);</pre>
+              <pre class="in-8">animalNoiseList.addAnimal(name, noise);</pre>
+              <pre class="in-8">return animal;</pre>
+              }<br /><br />
+
+              function makeNoise(event){
+              <pre class="in-8">console.log(event.target.id); <span>/* event.target is the frog/cow element itself with 'click'. */</span></pre>
+              <pre class="in-8">event.target.innerHTML = animalNoiseList.makeNoise(event.target.id);</pre>
+              }<br /><br />
+
+              const frog = makeAnimalButton('frog', 'ribbit');<br />
+              const cow = makeAnimalButton('cow', 'moo');<br /><br />
+
+              frog.addEventListener('click', makeNoise); <span>/* changes frog button's innerHTML to ribbit */</span><br />
+              cow.addEventListener('click', makeNoise); <span>/* changes cow button's innerHTML to moo */</span>
+            </code>
+          </li>
+          <li>
+            There are many other events that can happen in a browser other than clicks. Mouse wheel, mouse dragging, CSS transitions (when they start or stop), text selection, DOM mutation, etc., are all
+            events types. For a full list of event types, visit MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener noreferrer">Event Reference</a>.
+          </li>
+          <li>
+            If you ever need to have an event handler that also takes a parameter, you can't use <mark>function(event, parameter)</mark> as the callback
+            because it will execute immediately. Instead, use an anonymous function returning a function reference. This will add the argument you need without executing:
+            <code>
+              let firstHeading = document.createElement('h1');<br />
+              firstHeading.style.fontSize = '2rem';<br />
+              firstHeading.style.transition = 'font-size 250ms';<br />
+              document.body.appendChild(firstHeading);<br />
+              firstHeading.innerHTML = 'This is a tiny heading :(';<br /><br />
+
+              function larger(event, size){<br />
+              <pre class=in-8>event.target.style.fontSize = size;</pre>
+              <pre class="in-8">event.target.innerHTML = 'NOW IT\'S A BIG HEADING! :D'</pre>
+              }<br /><br />
+
+              function smaller(event, size){<br />
+              <pre class="in-8">event.target.style.fontSize = size;</pre>
+              <pre class="in-8">event.target.innerHTML = 'Now it\s tiny again :(';</pre>
+              }<br /><br />
+
+              <span>
+                /* incorrect, larger and smaller would execute immediately:<br />
+                firstHeading.addEventListener('mouseover', larger(event, '4rem'));<br />
+                firstHeading.addEventListener('mouseover', smaller(event, '2rem')); */
+              </span><br /><br />
+
+
+              <span>/* correct, larger and smaller return a function reference */</span><br />
+              firstHeading.addEventListener('mouseover', function callLarger(event){larger(event, '4rem')});<br />
+              firstHeading.addEventListener('mouseout', function callSmaller(event){smaller(event, '2rem')});<br /><br />
+
+              <span>/* Notice how both callback functions are named. Otherwise, we not not be able to remove the event listener later on. */</span>
+
+            </code>
+          </li>
+          <li>
+            Above, <mark>mouseover</mark> and <mark>mouseup</mark> are additional mouse events referenced. Here's a list of all mentioned mouse events so far for consideration when creating
+            event listeners:
+            <div class="num-list">
+              1. <mark>click</mark><br />
+              2. <mark>wheel</mark><br />
+              3. <mark>mousedown</mark><br />
+              4. <mark>mouseup</mark><br />
+              5. <mark>mouseover</mark><br />
+              6. <mark>mouseout</mark>
+            </div>
+          </li>
+          <li>
+            And here are a bunch of keyboard events to consider:
+            <div class="num-list">
+              1. <mark>keydown</mark><br />
+              2. <mark>keyup</mark><br />
+              3. <mark>keypress</mark>
+            </div>
+          </li>
+        </ul>
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter11a" class="italic">Input Forms and Validation</h4>
+        <ul id="chapter11aUL">
+          <li>
+            A <em>regular expression</em> is a sequence of characters representing a pattern. We can use that pattern to match strings, match parts of strings, confirm that a string conforms to pattern rules, or replace
+            parts of strings with different characters.
+          </li>
+          <li><em>Client-side validation</em> is the process of checking input fields for acceptable input patterns without the need for storage.</li>
+          <li>The <em>client</em> is the process interacting with the server on behalf of the user. This is usually a web browser on the web.</li>
+          <li>In client-side validation, the logic behind validation is included in the code that displays the form on the user's device. No interaction with the back-end is needed.</li>
+          <li>Front-end validation is quick for the user, but Javascript can be turned off and malicious attacks can be made</li>
+          <li>Back-end validation is the last defense for correct formatting, validation, and "sanitizing" the data so it is stored properly in a database</li>
+          <li>Back-end validation also allows you to check for other validation rules, such as disallowing the registration of an email already being used </li>
+          <li>Back-end validation also hides the code for validation, which makes malicious attacks harder to carry out since they can't see the rules</li>
+          <li>Back-end machines are often much more powerful and can carry out more extensive validation methods</li>
+          <li></li>
+        </ul>
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ██   ████
+    ██░░░░██░██                ██████   ░██                    ███  █░░░ █
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░░██ ░    ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█   ░██    ███
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    ░██   █░░
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      ░██  █
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███      ████░██████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░      ░░░░ ░░░░░░       -->
+
+
+        <h2 id="chapter12">Chapter 12</h2>
+        <h3 class="italic">Classes</h3>
+        <ul id="chapter12UL">
+          <li>
+            Classes should always be labeled in <em>PascalCase</em> and should take on the form:
+            <code>
+              class Student{<br />
+              <pre class="in-4">constructor(name, age){</pre>
+              <pre class="in-8">this._name = name;</pre>
+              <pre class="in-8">this._age = age;</pre>
+              <pre class="in-4">}</pre>
+              }
+            </code>
+          </li>
+          <li>The main difference between classes and object literals is classes have a constructor, and object literals are in the format of key:value pairs.</li>
+          <li>An <em>instance</em> is an object of a particular class that has unique property values</li>
+          <li>
+            To add an instance, use the keyword <mark>new</mark> and parentheses for initialization:
+            <code>
+              class Tenant{
+              <pre class="in-4">constructor(unit, name){</pre>
+              <pre class="in-8">this._unit = unit</pre>
+              <pre class="in-8">this._name = name</pre>
+              <pre class="in-4">}</pre>
+              }<br /><br />
+              const Jim = new Tenant(213, 'Jim');<span>/* a single instance of a tenant */</span><br />
+              let tenantArray = [Jim, new Tenant(214, 'Alfred'), new Tenant(215, 'Carly')];<span>/* multiple instances */</span>
+            </code>
+          </li>
+          <li>Be careful to use <mark>()</mark> and not <mark>{}</mark> for initialization. Curly braces are only used for object literals! But parentheses calls up the constructor function.</li>
+          <li>
+            With class methods, be careful not to include commas between as you would with object literals. Object literals is a list of key:value pairs which is separated by commas. A class acts
+            more like a namespace or a template who's primary role is to structure code
+          </li>
+          <li>
+            Here's the format for making getters:
+            <code>
+              class Car{<br />
+              <pre class="in-4">constructor(year, model, make){</pre>
+              <pre class="in-8">this._year = year;</pre>
+              <pre class="in-8">this._model = model;</pre>
+              <pre class="in-8">this._make = make;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">get year(){</pre>
+              <pre class="in-8">return this._year;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">get model(){</pre>
+              <pre class="in-8">return this._model;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-8">get make(){</pre>
+              <pre class="in-8">return this._make;</pre>
+              <pre class="in-4">}</pre>
+              }
+            </code>
+          </li>
+          <li>
+            You can start to see why it's important for using <mark>_</mark> as a prefix for all properties (similar to the way <mark>m_</mark> is used in C++ for member variables), because they're distinct from
+            local variables within a constructor or other methods. This does not make it private, though. For that, you would have to use <mark>#</mark> for private variables:
+            <code>
+              class Character{
+              <pre class="in-4">#name;</pre>
+              <pre class="in-4">#strength;</pre>
+              <pre class="in-4">#agility;</pre>
+              <pre class="in-4">#hp;</pre>
+              <pre class="in-4">constructor(name, strength, agility, hp){</pre>
+              <pre class="in-8">this.#name = name;</pre>
+              <pre class="in-8">this.#strength = strength</pre>
+              <pre class="in-8">this.#agility = agility;</pre>
+              <pre class="in-8">this.#hp = hp;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">getName(){</pre>
+              <pre class="in-8">return this.#name;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">getStrength(){</pre>
+              <pre class="in-8">return this.#strength;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">getAgility(){</pre>
+              <pre class="in-8">return this.#agility;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">getHP(){</pre>
+              <pre class="in-8">return this.#hp;</pre>
+              <pre class="in-4">}</pre>
+              }<br /><br />
+
+              const Player1 = new Character('Scorpion', 34, 15, 310);<br />
+              console.log(Player1.getHP());
+            </code>
+          </li>
+          <li>With Javascript access specifiers, built-in getter functions do not work, because they're truly meant to be private class variables, where they cannot be changed or viewed outside of the class.</li>
+        </ul>
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter12a" class="italic">Inheritance</h4>
+        <ul id="chapter12aUL">
+          <li>Use the keyword <mark>extends</mark> to create a <em>subclass</em> (or <em>derived class</em>) that inherits from a <em>Superclass</em> (or <em>base class</em>).</li>
+          <li>
+            In the constructor, the <mark>super()</mark> function will call the constructor of the base class to initialize derived class properties.
+            <aside class="warning">Important: The function super() must always be placed above any <mark>this</mark> initializations for the subclass. Otherwise the compiler will throw an error.</aside>
+            <code>
+              class Character{      <span>/* base class */</span>
+              <pre class="in-4">constructor(name){</pre>
+              <pre class="in-8">this._name = name;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">get name(){</pre>
+              <pre class="in-8">return this._name;</pre>
+              <pre class="in-4">}</pre>
+              }<br /><br />
+
+              class Ninja extends Character{     <span>/* subclass inheriting from Character */</span>
+              <pre class="in-4">constructor(name, weapon){</pre>
+              <pre class="in-8">super(name)</pre>
+              <pre class="in-8">this._weapon = weapon;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">attack(move){    <span>/* notice how the function keyword is omitted for classes */</span></pre>
+              <pre class="in-8">console.log(super.name + ' attacked with ' + move + '!');</pre>
+              <pre class="in-4">}</pre>
+              }<br /><br />
+
+              class Wizard extends Character{     <span>/* subclass inheriting from Character */</span>
+              <pre class="in-4">constructor(name, element){</pre>
+              <pre class="in-8">super(name);</pre>
+              <pre class="in-8">this._element = element;</pre>
+              <pre class="in-4">}</pre>
+              <pre class="in-4">castSpell(spell){</pre>
+              <pre class="in-8">console.log(super.name + ' casted ' + spell + '!');</pre>
+              <pre class="in-4">}<span>   /* use super.name for the base class property */</span></pre>
+              }<br /><br />
+
+              const user1 = new Ninja('Saito', 'Katana')<br />
+              const user2 = new Wizard('Eryndor', 'Fire');<br />
+              user1.attack('bone break');   <span>/* logs 'Saito attacked with bone break!'</span><br />
+              user2.castSpell('mind control');   <span>/* logs 'Eryndor casted mind control!' */</span><br />
+            </code>
+          </li>
+          <li>
+            In Javascript, the <mark>static</mark> keyword holds a different meaning than most programming languages. In C++, for instance, <mark>static</mark> would mean the variable or function is initialized
+            once and exists throughout the lifetime of the program. But in Javascript, it has nothing to do with variable lifetime. It has to do with inheritance.
+          </li>
+          <li>
+            Use <mark>static</mark> if you want to disallow inheritance of any base class's methods. A method with <mark>static</mark> can be invoked on the base class directly, but not on any children or instances:
+            <code>
+              class Oven{
+              <pre>constructor(temperature){</pre>
+              <pre class="in-8">this._temperature = temperature;</pre>
+              <pre>}</pre>
+
+              <pre>static getTypes(){   <span>/* getTypes will need to be called directly on the base class, Oven */</span></pre>
+              <pre class="in-8">const types = ['KitchenOven', 'Toaster'];</pre>
+              <pre class="in-8">return console.log(types);</pre>
+              <pre>}</pre>
+              }<br /><br />
+
+              class KitchenOven extends Oven{
+              <pre>constructor(temperature, ovenLightOn){</pre>
+              <pre class="in-8">super(temperature);</pre>
+              <pre class="in-8">this._ovenLightOn = ovenLightOn;</pre>
+              <pre>}</pre>
+
+              <pre>lightSetting(onOff){</pre>
+              <pre class="in-8">if (onOff === true || onOff === false){</pre>
+              <pre class="in-12">this._ovenLightOn = onOff;</pre>
+              <pre class="in-12">console.log("Oven light is now " + (onOff ? "on" : "off") + '!');</pre>
+              <pre class="in-8">} else { console.log("Please select a valid setting."); }</pre>
+              <pre>}</pre>
+              }<br /><br />
+
+              class Toaster extends Oven{
+              <pre>constructor(temperature, toastTime){</pre>
+              <pre class="in-8">super(temperature)</pre>
+              <pre class="in-8">this._toastTime = toastTime;</pre>
+              <pre>}</pre>
+              }<br /><br />
+
+              const roaster3000 = new KitchenOven(400, false);<br />
+              Oven.getTypes(); <span>/* Logs ['KitchenOven', 'Toaster'], useful for seeing all subclasses */</span><br />
+              roaster3000.getTypes(); <span>/* Throws an error, because getTypes() cannot be invoked on a KitchenOven */</span><br />
+              const otherOven = Oven(2200);<br />
+              ovenOven.getTypes() <span>/* Also throws an error. getTypes() cannot be invoked on an INSTANCE either */</span>
+            </code>
+          </li>
+          <li>Use window.getComputedStyle(element) when you want to see a style of an element that inherits a particular property, such as an inherited color</li>
+          <li>Make an IntersectionObserver to see if an element is in the viewport. This is preferred over .getBoundingClientRect() because it's newer and not sluggish</li>
+
+        </ul>
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ██   ████
+    ██░░░░██░██                ██████   ░██                    ███  █░░░ █
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░░██ ░    ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█   ░██    ███
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    ░██   ░░░ █
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      ░██  █   ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███      ████░ ████
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░      ░░░░  ░░░░        -->
+
+
+        <h2 id="chapter13">Chapter 13</h2>
+        <h3 class="italic">Asynchronous Javascript</h3>
+        <ul id="chapter13UL">
+          <li>Asynchronous code is code that allows for multiple threads to be used at the same time. It allows a user to interact with a website without being blocked.</li>
+          <li>Javascript is single-threaded, but the event-loop is able to employ concurrency</li>
+          <li>Javascript really can only execute one task at a time, but the browser's event loop and WebAPI's make asynchronicity possible.</li>
+          <li>
+            In Browsers, Javascript code is executed on the stack. But most <mark>asynchronous operations</mark>, such as <mark>setTimeout()</mark> are handled by WebAPIs. Once the WebAPI runs these operations, it will push the remaining Javascript onto a callback queue. The event loop then makes sure nothing is
+            on the stack, and finally pushes this queued Javascript onto the stack for it to be executed.
+          </li>
+          <li>A callback in an event listener is a type of asynchronous code. It is actively in a "wait" status until the event takes place. In the mean time, Javascript will continue to execute the top of the callstack.</li>
+          <li><mark>setTimeout(callback, 1000)</mark> will call a function after 1 second</li>
+          <li><mark>setInterval(callback, 1000)</mark> will repeatedly call a function every second</li>
+          <li>A <mark>Promise</mark> object is an object that represents the outcome of an asynchronous operation. A promise object has three states: resolved (fulfilled), rejected , and pending. If is resolved or rejected, it is considered settled.</li>
+          <li>A <mark>Promise</mark> takes an executor function, which will implement the resolve and reject functions within the Promise object. Those resolve and reject functions update the state and value of the Promise object.</li>
+          <li>Under the hood, the Promise constructor function probably looks something like this: <div class="screenshots"><img src="images/promise-implementation.png" /></div></li>
+          <li>It's super important to notice that the value of the resolved or rejected value can be any data type. It doesn't necessarily have to be just a string.</li>
+          <li>
+            All you need to worry about though, is creating the new Promise object, passing it an executor function which takes in the resolve, reject functions, and executes either of those functions based on your own criteria:
+            <code>
+              let x = 0;<br />
+
+              function count(resolve, reject){<br />
+              <pre>start = Date.now()</pre>
+              <pre>while (Date.now()-start < 1000)</pre>
+              <pre class="in-8">x++;</pre>
+              <pre>if (x > 10000000)</pre>
+              <pre class="in-8">resolve(x + ' is greater than ten million')</pre>
+              <pre>else</pre>
+              <pre class="in-8">reject(x + ' is less than ten million')</pre>
+              }<br /><br />
+
+              const overTenMillion = new Promise(count);<br />
+              console.log(overTenMillion); <span>/* will resolve or reject based on how fast it could increment x */</span>
+            </code>
+          </li>
+
+          <li>In the above example, x will increment in a loop over 1 second. But due to CPU loads, system performance, etc., the promise may be resolved or rejected.</li>
+          <li>If the promise is rejected, the program may terminate, as an unmanaged rejection is treated like an uncaught exception. To fix this, you need to include a <mark>.catch()</mark>.</li>
+          <li>Note however that the example above is still synchronous code. No asynchronous operations, such as <mark>setTimeout()</mark> occured.</li>
+          <li>It's important to know that 'overTenMillion' above is assigned a Promise object. When it is logged, console.log() logs the Promise object itself. </li>
+          <li>Therefore, a variable that is assigned to a Promise object can and will change at any point from a Promise { pending } to a Promise { state: resolved, value: 'reason' }.</li>
+        </ul>
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter13a" class="italic">.then(), .catch(), and Promise.all()</h4>
+        <ul id="chapter13aUL">
+          <li>
+            So how do we access the value of the promise once it resolves? If set a variable to a promise, the variable equals the promise object itself. But the promise object
+            can and will change:
+            <code>
+              let someVar = new Promise(resolve => setTimeout(() => resolve('resolved'), 1000));<br />
+              console.log(someVar); <span>/* Outputs a pending promise object */</span><br />
+              setTimeout(()=>console.log(someVar), 1001); <span>/* Outputs an object with a 'resolved' value */</span>
+            </code>
+          </li>
+          <li>The problem is we have to wait for the variable to change as above. But even still, we don't want the promise object itself, we just want the resolved value.</li>
+          <li>
+            The solution is the <mark>.then()</mark> function, which takes in the resolved value as a callback, such as:
+            <code>
+              new Promise(resolve => setTimeout(() => resolve('resolved'), 1000))<br />
+              .then(resolvedValue => console.log(resolvedValue)); <span>/* waits for the promise to be settled, and also takes in the resolved value as callback */</span>
+            </code>
+          </li>
+          <li>This is the primary way of accessing the promises resolved or rejected values.</li>
+          <li><mark>.then()</mark> therefore, as a higher-order function, is invoked on a Promise and takes two callback functions: one for a resolved promise, and one for a rejected promise.</li>
+          <li>If only 1 callback is provided for a <mark>.then()</mark> method, it will use the same callback for both states. If no callback is provided, it will do nothing.</li>
+          <li>The <mark>.then()</mark> method callbacks are usually referred to as the "success handler function" or <em>onFulfilled</em> function, and the "failure handler function" or <em>onRejected</em> function.</li>
+          <li>You can also use <mark>.then()</mark> and <mark>.catch()</mark> instead of 2 callbacks within .then(), to make cleaner code.</li>
+          <li>Remember, both <mark>.then()</mark> and <mark>.catch()</mark> take in callbacks. The promise resolved or rejected value automatically passes it's value to the callback argument.
+          <li>
+            Here's a blueprint so far for creating Promises with success and failure handlers:
+            <code>
+              let toggle = true;<br /><br />
+
+              function executor(resolve, reject){<br />
+              <pre>if (toggle === true)</pre>
+              <pre class="in-8">resolve('Resolved.'); <span>/* Promise's resolve method updates the Promise state and sets the value */</span></pre>
+              <pre>else</pre>
+              <pre class="in-8">reject('Rejected.'); <span>/* Promise's reject method updates the Promise state and sets the value */</span></pre>
+              }<br /><br />
+
+              function onFulfilled(val){ <span>/* onFullfilled takes in the value of the Promise that invoked it */</span><br />
+              <pre>console.log(val + ' WOOHOO!')</pre>
+              }<br /><br />
+
+              function onRejected(val){ <span>/* onRejected takes in the value of the Promise that invoked it */</span><br />
+              <pre>console.log(val + ' Damn...')</pre>
+              }<br /><br />
+
+              const firstPromise = new Promise(executor);<br />
+              firstPromise.then(onFulfilled, onRejected); <span>/* outputs: Resolved. WOOHOO! */</span><br /><br />
+
+              toggle = false; <span>/* Changes the execution path within executor */</span><br />
+              secondPromise = new Promise(executor);<br />
+              secondPromise.then(onFulfilled, onRejected);<span>/* outputs: Rejected. Damn... */</span><br /><br />
+              <span>/* If we were to call .then(onFulfilled, onRejected) on firstPromise again, it would still print 'Resolved. WOOHOO!'</span>
+            </code>
+          </li>
+          <li>
+            Note that if we were to call .then(onFulfilled, onRejected) on the firstPromise object again, it would still print 'Resolved. WOOHOO!'. Once a promise is settled, its value and state
+            can no longer be changed. Again, by definition, a Promise represents the outcome of an asynchronous executor. If a Promise could change, it wouldn't be serving it's purpose appropriately.
+          </li>
+          <li><mark>.then(onFullfilled)</mark> and <mark>.catch(onRejected)</mark> both return a new promise. If the returned promise is not explicitly specified, it's state will be resolved and value undefined.</li>
+          <li>
+            To specify the returned promise from <mark>onFullfilled</mark> or <mark>onRejected</mark> handlers you can either:
+            <div class="num-list">
+              1. <mark>return 'resolvedReason'</mark><br />
+              2. <mark>throw 'rejectedReason'</mark><br />
+              3. <mark>return Promise.resolve('resolvedReason')</mark><br />
+              4. <mark>return Promise.reject('rejectedReason')</mark><br />
+              5. <mark>return new Promise(executor)</mark>
+            </div>
+          </li>
+          <li>In Javascript, <em>composition</em> refers to chaining multiple promises together. This is not the same as the object oriented design principle of composition.</li>
+          <li>When returning values from a handler, try not to take on <mark>.then()</mark> or <mark>.catch()</mark> to the return line. Close off the handler first.</li>
+          <li>Also don't forget to explicitly return a promise. Otherwise, the value of the returned promise will be undefined.</li>
+          <li>
+            <mark>Promise.all()</mark> is a great way of employing <em>concurrency</em>, multiple asynchronous operations happening together. <mark>Promise.all()</mark> accepts an array of promises and returns
+            a single promise. If all promises in the array are successful, <mark>Promise.all()</mark> returns a resolved promise. If even one promise in the array fails, the <mark>Promise.all()</mark> returns rejected promise immediately.
+          </li>
+          <li>Under the hood, <mark>Promise.all()</mark> takes care of returning a new promise, so there's no need for the <mark>new</mark> keyword.</li>
+          <li>
+            The value of <mark>Promise.all()</mark> will either be an array of all the fulfilled promise values, or a single rejection reason by the value of the promise that failed.
+            <div class="screenshots"><img src="images/promise-review.png" /></div>
+          </li>
+        </ul>
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter13b" class="italic">Async-Await</h4>
+        <ul id="chapter13bUL">
+          <li>With ES6, a cleaner promise syntax was created: <mark>async</mark></li>
+          <li><mark>async</mark> is a keyword attached to an asynchronous function, and will return a promise by default.</li>
+          <li>
+            Here're all the return values of async:
+            <div class="screenshots"><img src="images/async-return-values.png" /></div>
+          </li>
+          <li><mark>async</mark> can also be chained with <mark>.then()</mark> and <mark>.catch()</mark></li>
+          <li><mark>await</mark> can only be used within an function marked as <mark>async</mark>. </li>
+          <li><mark>await</mark> halts that functions execution until it receives a settled promise value.
+          <li>Async-await is a great tool for creating clean asynchronous code that is maintainable and easy to understand</li>
+          <li>
+            try... catch statements are also easier for catching rejected promises. <mark>await</mark> will pass the rejected promise value to the error object:
+            <code>
+              function firstLetter(){<br />
+              <pre>return new Promise(resolve => setTimeout(() => resolve('L'), 1000))</pre>
+              }<br /><br />
+
+              function firstPhrase(ifYouWant){<br />
+              <pre>return new Promise((resolve, reject)=>{</pre>
+              <pre class="in-4">if(ifYouWant === true)</pre>
+              <pre class="in-8">setTimeout(()=> resolve('is for the way you look at me'), 1000)</pre>
+              <pre class="in-4">else</pre>
+              <pre class="in-8">setTimeout(()=> reject('is for LOSER'), 1000);</pre>
+              <pre>})</pre>
+              }<br /><br />
+
+              async function singASong(ifYouWant){<br />
+              <pre>try{</pre>
+              <pre class="in-8">const lyric_1 = await firstLetter();</pre>
+              <pre class="in-8">console.log(lyric_1);</pre>
+              <pre class="in-8">const lyric_2 = await firstPhrase(ifYouWant);</pre>
+              <pre class="in-8">console.log(lyric_2);</pre>
+              <pre>} catch(error){  <span>/* a rejected promise from firstPhrase triggers the catch block */</span></pre>
+              <pre class="in-8">console.log(error); <span>/* rejection value 'is for LOSER' is logged */</span></pre>
+              <pre>}</pre>
+              }<br /><br />
+
+              singASong(false);
+            </code>
+          </li>
+          <li>
+            It's important to know that <mark>await</mark> changes the printing behavior of console.log(). With await, console.log() will print the value of the settled promise instead of the promise
+            object itself.
+          </li>
+          <li>
+            Remember, a variable assigned to a Promise is assigned the promise object itself. But if anywhere else the await keyword is stated before the use of that variable, the execution of that line
+            will be halted until the promise is settled. Such as with console.log():
+            <div class="screenshots"><img src="images/concurrency-example.png" /></div>
+          </li>
+          <li>
+            This effectively creates <em>concurrency</em>, as multiple promises are assigned to variables but are waiting through <mark>await</mark> to be settled before used. This is all done within
+            an asynchronous function, which allows for the execution of multiple promises at the same time.
+          </li>
+          <li>
+            You can also use await before a <mark>Promise.all([])</mark> if you want to concisely create an array of promises which need to be settled. When you go to access the variable it's assigned to,
+            you can do so with myVar[index] to get a specific settled Promise object.
+          </li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter13c" class="italic">APIs and HTTP Requests</h4>
+        <ul id="chapter13cUL">
+          <li>Often, as a developer it's necessary to grab information (resources) from external places. That's what makes the internet so powerful.</li>
+          <li>In order to get these resources from all over the internet, developers use APIs.</li>
+          <li>
+            An <em>Application Programming Interface</em>, or <em>API</em>, is a tool created by a browser (Firefox, Chrome, Safari, etc.) or a third-party, which gives
+            developers the ability to get and interact with external data.
+          </li>
+          <li>An API is not a visual interface, it's a coding interface with rules and protocols for interacting with it.</li>
+          <li>It's an interface, in the sense that it is a connection point where your website can connect to another website to exchange info.</li>
+          <li>It's easy to understand if you remember it backwards: an API is an <span class='italic'>interface</span> for <span class="italic">programming applications.</span></li>
+          <li>There are two types of APIs: <div class="num-list">1. Native browser APIs<br />2. Third-party APIs</div></li>
+          <li>Native browser web APIs include the geolocation API, the battery API, the clipboard API, <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">and many more.</a></li>
+          <li>Third party APIs are created by other websites for accessing their data and functionality</li>
+          <li>In order to use these third-party APIs, you need to make <em>HTTP requests</em>.</li>
+          <li>
+            The third-party API will then send a <a href="https://www.restapitutorial.com/httpstatuscodes" target="_blank">response</a> to this HTTP request. Here are some of the most common responses:
+            <div class="screenshots"><img src="images/http-request-responses.png" /></div>
+          </li>
+          <li>If an API gets a successful reqest, it will send back data in the form of <em>Javascript Object Notation</em> (<em>JSON</em>)</li>
+          <li>JSON mostly looks like Javascript objects, except always uses "strings" as key names</li>
+          <li>
+            Note that it's almost impossible to get data from other websites without using their APIs. Browsers often enforce cross-origin resource sharing restrictions, which means if the request doesn't
+            originate from the same domain, protocol, and port as the endpoint, it will be denied. But even if you were to make HTTP requests using node.js and a server, you'd still face whatever security
+            restrictions the website employs. such as rate limiting (limiting the number of requests that can be made), IP blocking, and requiring API keys. This is critical for sites that have confidential info,
+            such as a bank.
+          </li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter13d" class="italic">RESTful APIs and JSON</h4>
+        <ul id="chapter13dUL">
+          <li>
+            <em>Representational State Transfer</em>, also known as <em>REST</em>, is an architectural style for designing networked applications. It helps to facilitate communication
+            between client and server.
+          </li>
+          <li>
+            It's easiest to remember by breaking down the name: It's a represented state of the server (or the resource is manages) that is transferred to the client. In other words, snapshots of the
+            resource are requested and returned through JSON to the client.
+          </li>
+          <li>
+            HTTP requests must include one of the the core CRUD methods:
+            <div class="num-list">
+              1. <mark>POST</mark> (create)<br />
+              2. <mark>GET</mark> (read)<br />
+              3. <mark>PUT</mark> (update)<br />
+              4. <mark>DELETE</mark> (delete).
+            </div>
+          </li>
+          <li>
+            The request must have also include a path, or the portion of after a domain. Remember, a URL breaks down as follows:
+            <div class="screenshots"><img src="images/uniform-resource-locator.png" /></div>
+          </li>
+          <li>In this case, <mark>/articles/23</mark> would be the path</li>
+          <li>The request usually also needs a header field, which can be an "Accepts" line. This specifies what type of content and format the client will allow to be returned.</li>
+          <li>
+            But there can be multiple header fields. All of the header fields just contain metadata describing the body of the request. A blank line usually follows to separate the
+            headers from the body
+          </li>
+          <li>An optional body contains any relevant data needed along with the request or response.</li>
+          <li>
+            Here's a great example of a request/response example with labeled sections:
+            <div class="screenshots"><img src="images/HTTP-communication-example.png" /></div>
+          </li>
+          <li>
+            The rules and protocols for acceptable requests are made by the API builder. They may require a header, or restrict methods at certain endpoints, etc. The builder controls how
+            resources are accessed and modified.
+          </li>
+          <li>It's important to recognize that HTTP requests/responses are just a structured plain-text form. They aren't written in any specific language.</li>
+          <li>The request/response lines and headers are written in plain text, but the body usually contains JSON, XML or other formats.</li>
+        </ul>
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter13e" class="italic">The Fetch API</h4>
+        <ul id="chapter13eUL">
+          <li>
+            <mark>fetch()</mark> is one of the primary ways of making HTTP requests. It achieves several tasks:
+            <div class="num-list">
+              1. Creates a HTTP request with a given URL (and default method, headers, and body information)<br />
+              2. Sends the HTTP request<br />
+              3. Handles potential errors from the previous steps and returns a rejected promise <br />
+              4. Receives the HTTP response<br />
+              5. Parses the plain text response and converts it to an a response object <br />
+              6. Returns a promise with a resolve value of the response object<br />
+            </div>
+          </li>
+          <li>
+            Here's what a pseudo fetch() function might look like under the hood:
+            <div class="screenshots"><img src="images/fakeFetch.png" /></div>
+          </li>
+          <li>
+            Note that if fetch() sends a rejected promise, this means that somehow the process of sending the HTTP request failed. It was not able to connect to the server. This has nothing to do
+            receiving a 400-level status code. A 400-level status code means that the HTTP request had successfully sent to the server! But the server denied or could not handle the request.
+            <div class="warning">
+              Be very careful about status codes! Log your <mark>const response = fetch(url)</mark> response variable and check the status code if you have issues! A 204 code could mean that you
+              fed the server an endpoint that wasn't found, and whoever configured the API decided to use '204' as a catch-all for 'No content.' This is idiotic and tricky to debug.
+            </div>
+          </li>
+          <li>
+            Here's a concise way of using fetch with error handling, and retrieving response data converted to JSON:
+            <div class="screenshots"><img src="images/fetch-post-example.png" style="width: 750px;" /></div>
+          </li>
+          <li>
+            But async-await, along with try and catch blocks is the much cleaner ES8 solution:
+            <div class="screenshots"><img src="images/async-POST-request.png" style="width: 950px;" /></div>
+          </li>
+        </ul>
+
+
+
+
+        <!--
+
+     ██████  ██                          ██                     ██     ██
+    ██░░░░██░██                ██████   ░██                    ███    █░█
+   ██    ░░ ░██       ██████  ░██░░░██ ██████  █████  ██████  ░░██   █ ░█
+  ░██       ░██████  ░░░░░░██ ░██  ░██░░░██░  ██░░░██░░██░░█   ░██  ██████
+  ░██       ░██░░░██  ███████ ░██████   ░██  ░███████ ░██ ░    ░██ ░░░░░█
+  ░░██    ██░██  ░██ ██░░░░██ ░██░░░    ░██  ░██░░░░  ░██      ░██     ░█
+   ░░██████ ░██  ░██░░████████░██       ░░██ ░░██████░███      ████    ░█
+    ░░░░░░  ░░   ░░  ░░░░░░░░ ░░         ░░   ░░░░░░ ░░░      ░░░░     ░       -->
+
+
+        <h2 id="chapter14">Chapter 14</h2>
+        <h3 class="italic">JSX and React</h3>
+        <ul id="chapter14">
+          <li>
+            Destructured assignment is a new ES6 way of extracting data from an arrays or objects. Here's array destructuring:
+            <code>
+              let street = ['Blueberry', 'Chestnut', 'Winterberry'];<br />
+              let [street1, street2 , street3] = street;<span>/* Order matters in array destructuring */</span><br />
+              console.log(street1);<br />
+              console.log(street2);<br />
+              console.log(street3);
+            </code>
+          </li>
+          <li>
+            Object destructuring is slightly different. Order is irrelevant, but key names must match assigned variable names exactly. If not, a colon operator needed:
+            <code>
+              let meal = {main: 'steak', side:'corn', vegetable:'broccoli', dessert:'shortcake'};<br />
+              let {vegetable, side, dessert: snack} = meal; <span>/* Variables need to match key names, or be assigned using : */</span><br />
+              console.log(side);<br />
+              console.log(vegetable);<br />
+              console.log(snack);<br />
+            </code>
+          </li>
+          <li>
+            You can also use destructuring assignment in functions as well. The same rules apply, where order matters for arrays and key names matter for objects:
+            <code>
+              function processOrder({name, address, weight}){<br />
+              <pre class="in-4">const price = weight*2;</pre>
+              <pre class="in-4">console.log('Your package will be shipped to ' + name + ' at ' + address);</pre>
+              <pre class="in-4">console.log('Your total is $' + price + " dollars.")</pre>
+              }<br /><br />
+
+              const packageLabel = {name: 'Bob Loblaw', address: 'Lawyer Street', weight: 12};<br /><br />
+
+              processOrder(packageLabel);
+            </code>
+          </li>
+          <li>
+            <em>JSX</em> is a syntax extension for Javascript. It's really not valid Javascript, so browsers don't know how to interpret it. It is a syntax that was
+            written specifically for the React framework. It allows for HTML-like code to be written directly within Javascript.
+          </li>
+          <li>A JSX compiler will have to compile (translate) a Javascript file with JSX into regualar Javascript.</li>
+          <li>
+            A JSX element looks exactly like an HTML element, except it's located in a Javascript file:
+            <code>
+              const myJsx = &lt;h1&gt;This is a JSX expression!&lt;/h1&gt;;
+            </code>
+          </li>
+          <li>Anywhere an expression usually goes, a JSX expression can replace it.</li>
+          <li>If JSX spans multiple lines, make sure to use surrounding parentheses to avoid it being interpreted as Javascript</li>
+          <li>
+            You can also nest JSX expressions, but be careful, only 1 outer JSX expression is valid at a time:
+            <code>
+              const myJsx = (<br />
+              <pre class="in-4">&lt;h1&gt;</pre>
+              <pre class="in-8">&lt;p&gt;This is a valid JSX expression!&lt;/p&gt;</pre>
+              <pre class="in-4">&lt;/h1&gt;</pre>
+              );<br /><br />
+              const myJsx = (<br />
+              <pre class="in-4">&lt;h1&gt;This is an outer JSX expression!&lt;/h1&gt;</pre>
+              <pre class="in-4">&lt;p&gt;But this is too, so it's invalid!&lt;/p&gt;</pre>
+
+              );
+            </code>
+          </li>
+          <li>To fix this issue, you could just simply wrap the invalid expression with a div.</li>
+          <li>
+            Here's how you create a root and render a JSX element placed within that root:
+            <code>
+              const container = document.getElementById('container');<br />
+              const root = createRoot(container);<br />
+              root.render(&lt;h1&gt;New Header Added to the DOM&lt;/h1&gt;)
+            </code>
+          </li>
+          <li>In JSX, be careful to replace the HTML attribute "class" with "className." This is because JSX translates into Javascript, which the keyword <mark>class</mark> is already reserved</li>
+          <li>"for" is another JSX attribute that needs to be changed. It will be changed to "htmlFor"</li>
+          <li>Also make sure to never forget self closing tags in JSX, such as the self closing <mark>&lt;br / &gt;</mark></li>
+          <li>
+            You can employ Javascript within JSX tags, but it needs to be between curly braces:
+            <code>
+              const div1 = document.getElementById('div1');<br />
+              const root = createRoot(div1);<br />
+              root.render(&lt;h1&gt;5 + 2&lt;/h1&gt;) <span>/* this will render a heading with 5+2 */</span><br />
+              root.render(&lt;h1&gt;{ 5 + 2 }&lt;/h1&gt;) <span>/* this will render a heading with 7 */</span>
+            </code>
+          </li>
+          <li>Anything between tags of a JSX element will be interpreted as JSX, and JSX doesn't make calculations, but it does allow implementing JS through curly brace syntax.</li>
+          <li>
+            You can also inject JS variables into curly braces:
+            <code>
+              const p = document.querySelector('article');<br />
+              const root = createRoot(article);<br />
+              const var = 'Butter';<br />
+              root.render(&lt;h1&gt;{var}&lt;/h1&gt;)<br />
+              root.render(&lt;h1&gt;Peanut {var}&lt;/h1&gt;)
+            </code>
+          </li>
+          <li>
+            You can also make event listeners through JSX, such as an onClick attribute, or an onMouseOver attribute. This will work just like an event target callback
+            <code>
+              function addBigClass(event){<br />
+              <pre class="in-4">event.target.className = 'bigFont';<span>/* notice the use of 'className' here */</span></pre>
+              }<br /><br />
+
+              const someContainer = document.getElementById('someDiv');<br />
+              const root = createRoot(someContainer);<br />
+              const newLink = &lt;a src='about:blank' target='blank' onClick={addBigClass}&gt;Blank Tab&lt;/a&gt;;<br />
+              root.render(newLink);
+
+            </code>
+          </li>
+          <li>Take note that JSX does not allow for if statements between its tags. It only accepts expressions, as expressions resolve to a singular value. Ternary operations are allowed.</li>
+          <li>
+            You should plan to use <mark>||</mark> and <mark>&&</mark> operators evaluations within JSX. Remember, these return actual values, such as:
+            <code>
+              const container = document.querySelector('header')<br />
+              const root = createRoot(container);<br /><br />
+
+              const myNum = 1;<br />
+              const heading = (<br />
+              <pre class="in-4">{ (myNum > 0) && &lt;h4&gt;Positive Number Was Found&lt;/h4&gt;}</pre>
+              )<br /><br />
+
+              root.render(heading)
+            </code>
+          </li>
+          <li>
+            Using the .map() method is also a fast efficient way of converting arrays to JSX arrays:
+            <code>
+              const sports = ['baseball', 'soccer', 'football', 'basketball']<br />
+              const jsxSports = sports.map(string => &lt;h4&gt;{string}&lt;/h4&gt;);<span>/* make a new array of JSX elements */</span><br /><br />
+
+              const container = document.getElementById('container');<br />
+              const root = createRoot(container);<br />
+              root.render(jsxSports); <span>/* React will automatically iterate over the JSX array */</span>
+            </code>
+          </li>
+          <li>
+            It may be smart to add keys for an extra locator so React doesn't scramble of list items. Occasionally this happens... just add keys to fix this problem:
+            <code>
+              const mascots = ['Owl', 'Bear', 'Giant', 'Hornet']<br />
+              const jsxMascots = mascots.map((string, i) => &lt;li key={'mascot' + i}&gt;{string}&lt;/li&gt;)<br /><br />
+
+              const container = document.getElementById('container');<br />
+              const root = createRoot(container);<br />
+              root.render(&lt;ul&gt;{jsxMascots}&lt;/ul&gt;)
+            </code>
+          </li>
+          <li>
+            Under the hood, when JSX is compiled, every JSX element is a call to React.createElement(). In other words, every JSX element gets compiled to a
+            React element. Here's what this function call looks like (it returns a React element object):
+            <code>
+              const newEl = React.createElement(<br />
+              <pre class="in-4">"div",</pre>
+              <pre class="in-4">null,<span>/* null if there are no props */</span></pre>
+              <pre class="in-4">"this is a new React element" <span>/* the inner text of the div */</span></pre>
+              )
+            </code>
+          </li>
+          <li>
+            Last, here are the summary of steps to which the virtual DOM is utilized in this whole process:
+            <div class="screenshots"><img src="images/virtual-dom-steps.png" /></div>
+          </li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter14a" class="italic">React, Part 1</h4>
+        <ul id="chapter14aUL">
+          <li>
+            <em>React</em> is a framework that employs a virtual DOM to efficiently batch repaints and reflows to the real DOM. Normally, if you ever go to
+            read or write to a webpage, it will trigger a reflow/repaint by the browser. For example, using methods like .appendChild(), or changing elements via style.color, may
+            immediately cause a reflow/repaint of the webpage. If those two are back to back, modern web browsers may try to batch the reflow/repaint since they're in the same call stack, but it's
+            not guaranteed. Instead, React keeps track of those pending changes, applies those changes either automatically or when you choose. It always guarantees the minimum number of reflows/repaints
+            by batching updates.
+          </li>
+          <li>Another way to think about it is, React employs a virtual DOM to separate out state updates from rendering </li>
+          <li>A React root's render() method only updates the DOM elements that have changed when a change in the virtual DOM is detected.</li>
+          <li>React applications are made of <em>components</em>, or small chunks of reusable code that often are responsible for defining HTML content to be rendered</li>
+          <li>In modern React applications, functions are used to define components. Use PascalCase to name your function components. The component should return some sort of JSX to be rendered.</li>
+          <li>To use React, you'll have to use a bit of <mark>import</mark> and <mark>export</mark></li>
+          <li>
+            App.js and index.js are separate files. The browser ultimately only looks at what is embedded within HTML script tags, which for standard React applications, is a single index.js bundled file.
+            So you'll want to import any important modules (React components) from App.js into index.js.
+          </li>
+          <li>
+            In App.js (The top layer of a React application):
+            <code>
+              import React from 'react';<br /><br />
+              function NewComponent(){<br />
+              <pre class="in-4">return &lt;h1&gt;Hello Squirreld!&lt;/h1&gt;;<span>/* Parentheses are acceptable here if nesting JSX */</span></pre>
+              }<br /><br />
+
+              export default NewComponent;
+              <br /><span>/* if there were multiple export modules, this would be the default if not specified by the corresponding import keyword */</span>
+            </code>
+          </li>
+          <li>
+            In index.js:
+            <code>
+              import React from 'react';<br />
+              import ReactDOM from 'react-dom/client'; <span>/* Tells React how to interact with the DOM */</span><br /><br />
+              import NewComponent from './App'; <span>/* brings in the React component you made */</span><br /><br />
+
+              ReactDOM.createRoot(document.querySelector('main')).render(&lt;NewComponent /&gt;)<br />
+              <span>
+                /* note the self closing tag syntax. Regular syntax could've been used for nested JSX or more components */<br />
+                /* React treats lowercase tags as HTML elements, and uppercase as custom components */
+              </span><br />
+            </code>
+          </li>
+          <li>
+            Here's a recap of React components:
+            <div class="screenshots"><img src="images/components-recap.png" /></div>
+            <div class="screenshots"><img src="images/components-recap2.png" /></div>
+          </li>
+        </ul>
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter14b" class="italic">React, Part 2</h4>
+        <ul id="chapter14bUL">
+          <li><em>Props</em>, short for "properties", are pieces of information passed between components, changing their behavior and appearance</li>
+          <li>
+            Props look just like inputting HTML attributes. Any custom attribute name is accepted. String values will be in quotes, and all other Javascript values (numbers, expressions, etc.) will
+            need curly braces:
+            <code>
+              <span>/* In MyProp.js */</span><br />
+              import React from 'react'<br /><br />
+
+              function MyProp(propObj){<br />
+              <pre class="in-4">return (</pre>
+              <pre class="in-8">&lt;h2&gt;{propObj['anotherKey']} {propObj['someObjKey']}&lt;/h2&gt;</pre>
+              <pre class="in-4">)</pre>
+              }<br /><br />
+
+              export default MyProp;<br /><br />
+
+              <span>/* In App.js */</span><br />
+              import React from 'react';<br />
+              import MyProp from './MyProp';<br /><br />
+
+              function App(){<br />
+              <pre class="in-4">return &lt;MyProp someObjKey={350} anotherKey="Ill give u" /&gt;</pre>
+              }<br /><br />
+
+              <span>/* In index.js */</span><br />
+              import React from 'react';<br />
+              import { createRoot } from 'react-dom/client';<br /><br />
+
+              import App from './App';<br />
+
+              const root = document.getElementById('root')<br />
+              const virtDom = createRoot(root)<br />
+              virtDom.render(&lt;App /&gt;)
+
+            </code>
+          </li>
+          <li>Props can only be passed down the component tree, starting at <mark>App.js</mark>, the top layer of React. From there they can go down to lower components.</li>
+          <li>You can think of props like the "settings" of a component's tag in <mark>App.js</mark>. Those settings get passed down as an object to be parsed.</li>
+          <li></li>
+          <li>
+            Here's how you would pass an event handler to a component:
+            <code>
+              <span>/* App.js */</span><br />
+              import MyButton from './MyButton';<br />
+
+              function App() {<br />
+              <pre class="in-4">function handleHover(){</pre>
+              <pre class="in-8">alert('Now hovering! Hit enter, then click!');</pre>
+              <pre class="in-4">}</pre><br />
+
+              <pre class="in-4">function handleClick(event){</pre>
+              <pre class=in-8>event.target.innerHTML = 'Clickity click!';</pre>
+              <pre class="in-4">}<span>/* Direct DOM manipulation with event.target is discouraged, use hooks instead */</span></pre><br />
+
+              <pre class="in-4">return (</pre>
+              <pre class="in-8">&lt;div&gt;</pre>
+              <pre class="in-8">&lt;MyButton onHover={handleHover} onClick={handleClick} /&gt;</pre>
+              <pre class="in-8">&lt;/div&gt;</pre>
+              <pre class="in-4">);</pre>
+              }<br />
+
+              export default App;<br /><br />
+
+              <span>/* MyButton.js */</span><br />
+              function MyButton(props){<span>/* props object has { onHover: handleHover, onClick: handleClick }</span><br />
+              <pre class="in-4">const style = {</pre>
+              <pre class="in-4">backgroundColor: 'blue',</pre>
+              <pre class="in-4">color: 'white',</pre>
+              <pre class="in-4">padding: '20px',</pre>
+              <pre class="in-4">fontSize: '24px'</pre>
+              <pre class="in-4">}</pre><br />
+
+              <pre class="in-4">return ( <span>/* notice the use of onMouseEnter below... onHover isn't valid JSX */</span></pre>
+              <pre class="in-8">&lt;button style={style} onClick={props.onClick} onMouseEnter={props.onHover}&gt;</pre>
+              <pre class="in-12">This is a button!</pre>
+              <pre class="in-8">&lt;/button>;&gt;</pre>
+              <pre class="in-4">)</pre>
+              }<br />
+
+              export default MyButton;
+            </code>
+          </li>
+          <li>
+            It's common to use something like <mark>function MyComponent({ onClick })</mark>, where a destructured assignment is used to define the props object. This allows you to just use
+            <mark>onClick</mark> directly, instead of <mark>props.onClick</mark>
+          </li>
+          <li>
+            This is super important distinction to understand:
+            <div class="screenshots"><img src="images/prop-clarification.png" /></div>
+          </li>
+          <li>
+            <mark>props.children</mark> is a useful way of creating containers at a top level, while still being able to customize the inner content:
+            <div class="screenshots">
+              <img src="images/postjs2.png" />
+            </div>
+            <div class="screenshots">
+              <img src="images/postjs1.png" />
+            </div>
+          </li>
+          <li>A React Fragment is basically an unnamed tag, <mark>(&lt;&gt;...&lt;/&gt;)</mark></li>
+          <li>A React Fragment is used to return multiple JSX elements without adding an extra outer node to the DOM</li>
+          <li>
+            Alternatively, you could use .map() to do this:
+            <code>
+              return (someArrayOfObjects.map((obj)=> &lt;LowerComponent obj={obj} /&gt;);
+            </code>
+          </li>
+          <li>
+            React allows you to return arrays of JSX elements... alternatively you could directly return an array of JSX components:
+            <code>
+              return jsxArray; <span>/* no need for curly braces */</span>
+            </code>
+          </li>
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter14c" class="italic">The State Hook</h4>
+        <ul id="chapter14cUL">
+          <li>
+            Hooks are React functions that manage component variables, setting and tracking them for changes in "state". If the state of a variable changes (e.g. a boolean that is 0 changes to 1),
+            it will trigger a component re-rendering and a subsequent virtual DOM update.
+          </li>
+          <li>
+            React will re-render the entire component, calling its entire function and body and returned JSX again, but <mark>useState()</mark> will keep track of the state across re-renders.
+            It is given an initial value for the first mount, and any subsequent re-renders will use its new state.
+          </li>
+          <li>Here are some of the many built-in hooks: <mark>useState()</mark>, <mark>useEffect()</mark>, <mark>useContext()</mark>, <mark>useReducer()</mark>, <mark>useRef()</mark></li>
+          <li>
+            <mark>useState()</mark> allows React to 'use the state' of a particular component variable, much like a class variable with setter and getter methods:
+            <code>
+              import React, {useState} from 'react';<br />
+              /* useState is not a default export, so it must be explicitly listed */<br /><br />
+
+              function LikeButton({booleanValue}){ <span>/* destructuring props.booleanValue */</span><br />
+              <pre>const [bool, setBool] = useState(booleanValue);</pre>
+              <pre>const handleChange = () => {</pre>
+              <pre>setBool(Math.abs(bool-1));</pre>
+              <pre>}</pre><br />
+
+              <pre>return(</pre>
+              <pre class="in-8">&lt;div&gt;</pre>
+              <pre class="in-12">&lt;button onClick={(handleChange)}&gt;Like this post&lt;/button&gt;</pre>
+              <pre class="in-12">&lt;div&gt;{bool}&lt;/div&gt;<span>/* Renders the 1 or 0 of state variable of this component */</span></pre>
+              <pre class="in-8">&lt;/div&gt;</pre>
+              <pre>)</pre>
+              }<br /><br />
+              export default LikeButton;
+            </code>
+          </li>
+          <li>A super important distinction to understand is that React holds the the state values of a component internally</li>
+          <li>
+            When using <mark>let [x, setX] = useState()</mark>, x is a COPY of the actual internal state value, and that copy is only made once with useState().
+            This means you can increment x as much as you want (and you shouldn't,
+            you should use const instead of let), but <mark>setX</mark> is the only way to actually way to update the internally located state value. Once setX is called, IF the internal state variable is
+            actually changing, it will trigger a rerender of the component. Then, each line will be called again, including the line with useState().
+          </li>
+          <li>
+            Think of it like this:
+            <code>
+              let a = 1;<br />
+              let b = a;<br />
+              a += 1;<br />
+              console.log(b); <span>/* outputs 1, because b was assigned a COPY of a */</span><br />
+              b = a;<br />
+              console.log(b); <span>/* outputs 2, because b was reassigned. */</span>
+            </code>
+          </li>
+          <li>The line <mark>b = a;</mark> is essentially what set does, it changes the internally located state value.</li>
+          <li>
+            So this can result in a somewhat confusing but important distinction to understand:
+            <div class="screenshots"><img src="images/internal-state-clarification.png" /></div>
+          </li>
+          <li>
+            You expect h1 to produce 3 when clicking the button, but it produces 1 instead.
+            Here, the number variable is never actually reassigned... it holds a snapshot of the internal state variable for that render. When you call
+            <mark>setNumber(number + 1)</mark> that's essentially like saying <mark>internalState = number + 1</mark>... but that doesn't change number! Besides,
+            number is const when it the destructured assignment was created in the first place. Only when the component (the function) is called again will useState() actually
+            assign through destructuring a new, updated number variable.
+          </li>
+          <li>Essentially, React waits until all the code in the component is run before processing state-updates.</li>
+          <li>
+            This allows you to make changes within a component, edit your next state value, change it, etc. But it will wait until all the processing is done to process the final state value.
+            This is known as <mark>batching</mark>. It is what allows React to run faster and avoid too many re-renders.
+          </li>
+          <li>An <em>updater function</em> is a callback passed to <mark>setNumber()</mark></li>
+          <li>
+            The updater function accepts the queued (pending) state value as an argument:
+            <code>
+              function MyComponent(){<br />
+              <pre>const [x, setX] = useState(0)</pre>
+              <pre>const handleClick = () => {</pre>
+              <pre class="in-8">setX(pendX => pendX + 1); <span>/* pendX is initially x */</span></pre>
+              <pre class="in-8">setX(pendX => pendX + 1); <span>/* pendX is a cumulative though */</span></pre>
+              <pre class="in-8">setX(pendX => pendX + 1); <span>/* pendX will send only 3 to the internal state */</span></pre>
+              <pre>}</pre>
+              <pre>return &lt;button onClick={handleClick}&gt;{x}&lt;/button&gt;</pre>
+              }
+            </code>
+          </li>
+          <li>States can be more than just primitive types. They can also be objects.</li>
+          <li>
+            Here's an example of using an array as a state for a very simple comment posting app:
+            <div class="screenshots"><img src="images/comment-posting-app.png" /></div>
+          </li>
+          <li>Remember that in Javascript, you may dynamically assign keys within objects with <mark>[]</mark></li>
+          <li>
+            This allows for some convenience when setting an object as state:
+            <div class="screenshots"><img src="images/object-as-state.png" /></div>
+          </li>
+          <li>Try not to make any one state too complicated though. If you've got a state variable that's an object of objects of objects, just separate it all out.</li>
+          <li>
+            <em>Lifting state up</em> means moving a state of a component into its parent's state variable. This allows its siblings to be affected. In order to change the parent's state variable,
+            you'll need to pass the <mark>set</mark> function down as a callback to a prop of the original lower component. Then handle an onClick, onChange, etc. attribute of the lower component.
+          </li>
+
+        </ul>
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter14d" class="italic">The Effect Hook</h4>
+        <ul id="chapter14dUL">
+          <li>
+            In React, your components should be pure functions. A <em>pure function</em>:
+            <div class="num-list">
+              1. Reliably produces the same outcome when passed the same information.<br />
+              2. Doesn't read or write variables that are declared outside of it (creating unpredictability).
+            </div>
+          </li>
+          <li>Use props and local variables to create predictability.</li>
+          <li>A pure component should simply create the same rendering of JSX every time.</li>
+          <li>
+            However, changes that need to happen not during rendering are referred to as side-effects. These usually take place in asynchronous event-handlers. However, if you just
+            need to schedule a change to happen after a rendering, you can use <mark>useEffect()</mark>.
+          </li>
+          <li>
+            Be mindful with <mark>useEffect()</mark> though: "Strive to express your component's logic in the JSX you return. When you need to 'change things,' you'll usually
+            want to do it in an event-handler. As a last resort, you can <mark>useEffect()</mark>"
+          </li>
+          <li>
+            An <em>Effect</em> refers to the first argument of <mark>useEffect()</mark>. Remember, it's a callback argument, not the body (you're not defining <mark>useEffect()</mark>, it's not
+            your function
+          </li>
+          <li>
+            In essence, a React component has two types of logic:
+            <div class="num-list">
+              1. Rendering Code - Using props and state to calculate JSX in a pure way.<br />
+              2. Event Handlers - Functions which do something, interact with external systems, make network requests, change state, manipulate the DOM, etc.
+            </div>
+          </li>
+          <li>
+            Given that <mark>useEffect()</mark> typically connects to external systems, makes API calls, etc., and that react components are often re-rendered multiple times, you'll need to utilize <em>
+              cleanup
+              functions
+            </em> to avoid multiple connections being created. <em>Cleanup functions</em> are usually return bodies from <mark>useEffect()</mark> that remove event listeners.
+            If you <mark>addEventListener()</mark> each time the component re-renders, it'll cause a build up of event-listeners and bugs will appear. Also, notice how in the code below a dependencies <mark>[]</mark>
+            are listed as a second argument to the <mark>useEffect()</mark> function. This will usually list variables that are included in the body of the <mark>useEffect()</mark> function. Without the
+            <mark>[]</mark> array, useEffect() will run with each component re-render. With the <mark>[]</mark> array, useEffect() will run only the first mount
+            and any time the included variables change. In this case, there are none, so useEffect() only runs
+            on mount:
+            <div class="screenshots"><img src="images/useEffect-example.png" /></div>
+          </li>
+          <li>
+            Anytime you want to connect to an external API, you'll do your actual connecting in the <mark>useEffect()</mark> code body, since you want to grab this data once and not on
+            each re-render. However the API allows you to get request the information, do that in <mark>useEffect()</mark> and use the returned promise response object data to set the state of one
+            of your variables. But don't forget to add at least an empty dependency array! You never want to make unneccessary API calls from re-rendering.
+          </li>
+          <li>
+            The <em>dependency array</em> should list all the variables your <mark>useEffect()</mark> depends on! Hence the name, dependency array:
+            <div class='screenshots'><img src="images/dependency-array.png" /></div>
+          </li>
+          <li>In development, <em>strict mode</em> will always have a re-mount of components after the initial mount. This allows you to find bugs from re-mounting.</li>
+          <li>
+            Note that the <mark>useRef()</mark> hook is a way to store information as a variable that doesn't get reassigned with each re-render. Regular variables, on the other hand, do reset with
+            each re-render. Also, unlike state, changing the ref does not trigger a re-render.
+          </li>
+          <li>Note that React keeps track of hooks in the order of the components definition. So always define them at the top!</li>
+          <li>Also, never use hooks outside of a React component.</li>
+          <li>Remember, <mark>useEffect()</mark> is a hook, so you'll want to employ this also at the top, and never within a loop, condition, or nested function.</li>
+          <li>
+            For instance, it can be tempting to make code like this:
+            <code>
+              if (someStateVariable){<br />
+              <pre>useEffect(() => { </pre>
+              <pre>//do something here</pre>
+              <pre>});</pre>
+              }
+            </code>
+          </li>
+          <li>
+            But don't do this. This nested <mark>useEffect()</mark> will result in different hooks to be called with different renders, and causes errors. Instead, refactor it:
+            <code>
+              useEffect(() => {<br />
+              <pre>if (someStateVariable)</pre>
+              <pre class="in-8">//do something</pre>
+              }, [someStateVariable]); <span>/* Use a dependency array to keep track of any changes */</span>
+            </code>
+          </li>
+          <li>
+            You may <mark>useEffect()</mark> right under <mark>useState()</mark> if they're related and it helps to organize the code a bit more (e.g. if you have 3 states and 3 effects that correspond,
+            group your effects next to the corresponding states rather than all together
+          </li>
+          <li>Remember that on every re-render, the ENTIRE function component runs. That includes the component's logic, variable declarations, the returned JSX, etc.</li>
+          <li>
+            <em>Custom hooks</em> are another way of creating <mark>use()</mark> type hooks but are especially useful for hiding away external API logic, or for hiding away
+            unneccesary duplicate code
+          </li>
+          <li>
+            You may use <mark>ref</mark> as an attribute to any JSX element. <mark>ref</mark> is a special attribute reserved for pointing to DOM elements. That's why it's not allowed
+            as a prop name. It's unique in that under the hood, when React sees <mark>ref</mark>, if <mark>yourRef = useRef(null)</mark>, (remember, <mark>useRef()</mark> returns a plain Javascript object
+            <mark>{current: null}</mark>) it will set <mark>current</mark> to the DOM element, so now <mark>yourRef</mark> points to that DOM element.
+          </li>
+          <li>
+            This is actually incredibly useful because now in your React components in your return statements you can <mark>useState()</mark> to reference variables in the code above, and with <mark>useRef()</mark>
+            you can reference variables in the returned JSX code below.
+          </li>
+          <li>You'll mostly be using ref for things like <mark>ref.current.focus()</mark> or <mark>.scrollIntoView()</mark>, keeping track of sizes of elements, etc.</li>
+        </ul>
+
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter14e" class="italic">Common Pitfalls with Hooks</h4>
+        <ul id="chapter14eUL">
+          <li>
+            The following example changes the span element from 0 to 1 after a click, but fails to add any further clicks. Can you spot why?
+            <div class="screenshots"><img src="images/hook-pitfalls-1.png" /></div>
+          </li>
+          <li>
+            The reason is the dependency array. useEffect() is defined only once on the first render, and increment locks in a click value of 0. Without re-rendering, increment forms a closure around
+            the original click value.
+          </li>
+          <li>The solution can be just to get rid of the dependency array. But more often than not you don't want your effect being rendered over and over, so we need a different solution: updater functions.</li>
+          <li>
+            The <em>updater function</em> is any callback passed to <mark>set()</mark>, with the pending state as the callback argument:
+            <div class="screenshots">
+              <img src="images/hook-pitfalls-2.png" />
+            </div>
+          </li>
+          <li>
+            How is it that the <mark>setState()</mark> function can retain a reference to the pending state? Here's a hypothetical implementation of the <mark>useState()</mark> function under the hood:
+            <div class="screenshots"><img src="images/useState-under-the-hood.png" /></div>
+          </li>
+          <li>
+            This demonstrates the power of callbacks! Callback arguments can become functions which become arguments again and so on, all in the process utilizing any variables within scope as
+            they're passed along!
+            <div class="screenshots"><img src="images/callback-demo.png" /></div>
+          </li>
+          <li>
+            Knowing this, you should now understand why you also need to return cleanup functions as callbacks. If you return a cleanup function, it will invoke it immediately, and it can't be
+            properly stored. So for instance, if you <mark>return clearTimeout(timer)</mark>, under the hood it'll immediately invoke the clear the timeout function to try to store its returned value,
+            which there is none (undefined). But React expects a callback function to store for later instead, so when it is unmounting it'll call this function. This is why it would also be perfectly
+            acceptable to utilize a function reference, like <mark>return myOwnClearTimeout</mark>
+          </li>
+        </ul>
+
+
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter14f" class="italic">React Programming Patterns</h4>
+        <ul id="chapter14fUL">
+          <li>
+            Sometimes components can have too many reponsibilities. These can generally be grouped into two categories though:
+            <div class="num-list">
+              1. Logic calculations (i.e. updating state, running effects, etc.)<br />
+              2. Rendering JSX
+            </div>
+          </li>
+          <li>
+            Through props, lifting state up, and importing components, its 100% possible to refactor components into a container component, and a presentational component. This separation of concerns
+            can make for better code organization and convenience.
+          </li>
+          <li>
+            Here're the steps for refactoring large components:
+            <div class="num-list">
+              1. Move all JSX to a new (presentational, or 'stateless') component. Export it. <br />
+              2. Import it in the old (container, or 'stateful') component. Return the component.<br />
+              3. Pass the state values down as props.<br />
+              4. Pass the setState values down as handlers.<br />
+            </div>
+          </li>
+          <li>Many times, you'll have a lot of duplicate event handlers doing the same thing but for different HTML elements. Imagine a form with 30 inputs! That would be a ton of event handlers
+          to create and it would like messy and verbose. Instead, you can map react setters to a single <em>setter-object</em> by just grabbing their name:
+          <div class="screenshots"><img src="images/setter-object.png"/></div>
+          </li>
+          <li>This also makes it much easier to iterate over all the setters and reset a whole form all at once!</li>
+        </ul>
+
+
+
+
+
+
+
+
+        <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+        <h4 id="chapter14g" class="italic">React Styles and Forms</h4>
+        <ul id="chapter14gUL">
+          <li>Remember, when setting the value for a JSX <mark>style</mark> attribute, it needs to be rendered as object, AND needs to take in an object literal, hence the need
+          for two curly braces, <mark>style{{color: 'red'}}</mark></li>
+          <li>Values for each of these CSS properties should be in quotes as strings</li>
+          <li>Numeric values not in strings are always interpreted as pixels in React</li>
+          <li>Never use hyphens for any CSS properties. Since it is being rendered as a Javascript object, Javascript interprets hyphens as minus symbols. So instead, use camelCase.</li>
+          <li>For that same reason, JSX will use <mark>className</mark> attribute, instead of class.</li>
+          <li>You have multiple options for styling: inline, object variables, style sheets, and modules.</li>
+          <li>Style sheets can cause naming conflicts if many components use different style sheets and CSS selectors collide. So, instead, use <em>modules</em></li>
+          <li>By importing a stylesheet as a module instead of a regular CSS file, the styles are only available for that component. This automatically creates unique classNames for each module.</li>
+          <li>CSS modules are also possible in vanilla Javascript, but React comes with tools which automatically convert CSS modules to objects with unique keys for component use.</li>
+          <li>Here's the import line for CSS modules in React: 
+          <code>import styles from './filename.module.css'</code></li>
+          <li>Notice that you import the styles object. This holds the classNames you selected. To access them, in your JSX attributes use <mark>className={styles.sidebar}</mark> where sidebar would 
+          be any CSS class selector.</li>
+          <li>Note that CSS modules scope only classes, so if in your stylesheet you use something like, <mark>h1{ }</mark> it will still affect all h1's globally in the application.</li>
+          <li>For React forms, you always want to update a state with every entered keystroke. You do this through an <mark>onChange</mark> JSX attribute</li>
+          <li><mark>onChange</mark> is assigned to an event handler, which does a <mark>setState(target.value)</mark>, for which the <mark>value={state}</mark></li>
+          <li>React Components can be categorized as <em>controlled</em> components (those that stateless and controlled by another component), or <em>uncontrolled</em> components 
+          (stateful components that manage their own state)</li>
+          <li>Most React elements are controlled</li>
+        </ul>
+
+
+
+
+
+
+      </section>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
